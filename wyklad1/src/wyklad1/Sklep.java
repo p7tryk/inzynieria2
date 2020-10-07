@@ -8,14 +8,10 @@ public class Sklep {
 	private void run() 
 	{
 			List<String> dodatki = new ArrayList<>();
+			dodatki.add("myszka");
 			dodatki.add("klawiatura");
-			dodatki.add("mysz");
 			
-			Komputer komputer1 = new Komputer();
-			komputer1.setNazwa("OriginPC");
-			komputer1.setIloscRamu("4");
-			komputer1.setWielkoscHDD("1TB");
-			komputer1.setDodatki(dodatki);
+			Komputer komputer1 = new Komputer("OriginPC", "6", "1TB", dodatki);
 			System.out.println(komputer1);
 	}
 		
