@@ -2,22 +2,32 @@ package wyklad1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class Sklep {
+import wyklad1.Komputer.KomputerBuilder;
 
-	private void run() 
+public class Sklep
 	{
-			List<String> dodatki = new ArrayList<>();
-			dodatki.add("myszka");
-			dodatki.add("klawiatura");
-			
-			Komputer komputer1 = new Komputer("OriginPC", "6", "1TB", dodatki);
-			System.out.println(komputer1);
-	}
+
+		private void run()
+			{
+				try
+				{
+					Komputer komputer1 = new Komputer.KomputerBuilder().domyslnaNazwa("test");		
+					System.out.println(komputer1);
+				} 
+				catch (Exception ex)
+				{
+
+				}
+
+			}
+
 		
-	public static void main(String[] args) 
-	{
-			new Sklep().run();
-	}
 
-}
+		public static void main(String[] args)
+			{
+				new Sklep().run();
+			}
+
+	}
