@@ -1,8 +1,10 @@
 package stan;
 
-public class KartaJunior implements TypKarty {
-	    @Override
-	    public void getState() {
-	        System.out.println("Karta DŻunior Masterkart");
-	    }
+public class KartaJunior implements TypKarty
+	{
+		@Override
+		public String getState()
+			{
+				return "Karta DŻunior Masterkart";
+			}
 	}
