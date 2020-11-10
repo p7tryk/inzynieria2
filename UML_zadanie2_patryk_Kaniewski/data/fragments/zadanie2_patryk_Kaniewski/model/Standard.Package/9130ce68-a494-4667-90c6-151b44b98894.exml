@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="zadanie2" version="4">
+  <OBJECT>
+    <ID name="zadanie2" mc="Standard.Package" uid="9130ce68-a494-4667-90c6-151b44b98894"/>
+    <PID name="zadanie2_patryk_Kaniewski" mc="Standard.Project" uid="d1a59726-b5c2-43ef-9cfa-a039e83a2dea"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[zadanie2]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="patryk_kaniewski" mc="Standard.Package" uid="ea750d82-a249-49a3-8d1c-8e5a4b7d1988"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="patryk_kaniewski (dependency_autodiagram)" mc="Standard.ClassDiagram" uid="e71c1615-b08f-450e-ae82-567ad822dd98"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
