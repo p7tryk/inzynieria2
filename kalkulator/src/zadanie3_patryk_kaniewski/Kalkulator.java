@@ -26,7 +26,7 @@ public class Kalkulator
 				order.put("-", 1);
 				order.put("(", 0);
 		}
-		public Kalkulator(String input)
+		public Kalkulator(String input) throws Exception
 			{
 				genHash();
 				growTree((convert(tokenizer(input))));
@@ -82,7 +82,21 @@ public class Kalkulator
 					{
 						temp.right = stack.pop();
 					}
-					temp = temp.left;
+					if(isNumber(temp.left.getValue()))
+					{
+						if(isNumber(temp.right.getValue()))
+						{
+							temp = temp.prev;
+						}
+						else
+						{
+							temp = temp.right;
+						}
+					}
+					else
+						temp=temp.left;
+					
+				//temp = temp.left;
 				}
 				tree.print();
 		}
@@ -101,7 +115,7 @@ public class Kalkulator
 			//throw new Exception("invalid input");
 		}
 		
-		private Queue<String> convert(List<String> input)
+		private Queue<String> convert(List<String> input) throws Exception
 			{
 				//TODO input validation
 				try
@@ -149,6 +163,8 @@ public class Kalkulator
 						queue.add(token);
 						continue;
 					}
+					
+					throw new Exception("invalid input");
 				}
 				
 				//prepare return

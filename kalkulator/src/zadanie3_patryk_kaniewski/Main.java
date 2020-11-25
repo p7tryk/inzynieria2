@@ -22,7 +22,7 @@ public class Main
 				tree.root.right = new Node("2");
 				tree.calculate();
 		}
-		public static void main(String[] args)
+		public static void main(String[] args) throws Exception
 			{
 				
 				//treetest();
