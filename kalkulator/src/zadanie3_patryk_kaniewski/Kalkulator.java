@@ -14,9 +14,21 @@ public class Kalkulator
 	{
 		//TODO sane private vs public
 		private binaryTree tree;
-		
+		Map<String, Integer> order = new HashMap<>();
+
+		private void genHash()
+		{
+				order.put("%", 2);
+				order.put("^", 3);
+				order.put("/", 2);
+				order.put("*", 2);
+				order.put("+", 1);
+				order.put("-", 1);
+				order.put("(", 0);
+		}
 		public Kalkulator(String input)
 			{
+				genHash();
 				growTree((convert(tokenizer(input))));
 				calculate();
 			}
@@ -36,11 +48,14 @@ public class Kalkulator
 		{
 				System.out.println(input);
 				Stack<Node> stack = new Stack<Node>();
-				Node temp;
+				Node temp = null;
+				Node prev;
 				for(String token: input)
 				{
 					System.out.println(token);
+					prev = temp;
 					temp = new Node(token);
+					temp.prev = prev;
 					if(isNumber(token))
 					{
 						stack.push(temp);
@@ -54,14 +69,16 @@ public class Kalkulator
 					}
 				}
 				
-				System.out.println(stack);
+				//System.out.println(stack);
 				
 				tree = new binaryTree(stack.pop());
 				temp=tree.getRoot();
+				
+				//TODO rozwinac prawa strone drzewka
 				while(!stack.isEmpty())
 				{
 					temp.left = stack.pop();
-					if(stack.isEmpty())
+					if(!stack.isEmpty())
 					{
 						temp.right = stack.pop();
 					}
@@ -95,13 +112,7 @@ public class Kalkulator
 					e.printStackTrace();
 					System.exit(-1);
 				}
-				Map<String, Integer> order = new HashMap<>();
-				order.put("^", 3);
-				order.put("/", 2);
-				order.put("*", 2);
-				order.put("+", 1);
-				order.put("-", 1);
-				order.put("(", 0);
+				
 
 				Queue<String> queue = new LinkedList<>();
 				Stack<String> stack = new Stack<>();

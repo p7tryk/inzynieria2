@@ -3,7 +3,7 @@ package zadanie3_patryk_kaniewski;
 
 class Node
 {
-		
+	public Node prev; //WTF?????
 	public String key; 	//TODO private + getters setters
 	public Node left, right;
 
@@ -30,6 +30,10 @@ class Node
 				return n1*n2;
 			case "/": //TODO dzielenie przez zero
 				return n1/n2;
+			case "%":
+				return n1 % n2;
+			case "^":
+				return Math.pow(n2, n1);
 			}
 			return 0;
 		}
@@ -63,6 +67,8 @@ class Node
 				n1 = Integer.parseInt(left.getValue());
 			if (!isNumber(right.getValue()))
 				n2 = right.calculate();
+			else if (right == null)
+				n2 = 0;
 			else
 				n2 = Integer.parseInt(right.getValue());
 			
