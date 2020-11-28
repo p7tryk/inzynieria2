@@ -20,7 +20,7 @@ public class binaryTree
 		}
 		public void print()
 		{
-			root.print();
+			root.printInfix();
 			System.out.println();
 		}
 		public String toString()

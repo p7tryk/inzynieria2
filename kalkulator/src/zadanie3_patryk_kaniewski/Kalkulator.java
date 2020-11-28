@@ -1,6 +1,5 @@
 package zadanie3_patryk_kaniewski;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -164,7 +163,7 @@ public class Kalkulator
 						continue;
 					}
 					
-					throw new Exception("invalid input");
+					//throw new Exception("invalid input");
 				}
 				
 				//prepare return
@@ -178,11 +177,12 @@ public class Kalkulator
 		
 		
 		
-		private double calculate()
+		public double calculate()
 		{
 			
 			double output = tree.calculate();
-			System.out.print("wynik =");
+			tree.getRoot().printInfix();
+			System.out.print("=");
 			System.out.println(output);
 			return output;
 		}

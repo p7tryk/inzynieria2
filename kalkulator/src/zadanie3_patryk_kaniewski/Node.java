@@ -3,7 +3,7 @@ package zadanie3_patryk_kaniewski;
 
 class Node
 {
-	public Node prev; //WTF?????
+	public Node prev; //TODO WTF??????????
 	public String key; 	//TODO private + getters setters
 	public Node left, right;
 
@@ -77,13 +77,13 @@ class Node
 			
 			return wynik;
 		}
-	public void print()
+	public void printInfix()
 	{
 			if(!(left==null))
-				left.print();
+				left.printInfix();
 			System.out.print(key);
 			if(!(right==null))
-				right.print();	
+				right.printInfix();	
 	}
 	public String toString()
 	{
