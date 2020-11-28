@@ -132,30 +132,45 @@ public class Kalkulator
 
 				for (String token : input)
 				{
-					if(isNumber(token))
+					if ("(".equals(token))
 					{
-						queue.add(token);
+						stack.push(token);
+						continue;
 					}
-					else if(!token.equals("(") && !token.equals(")"))
+
+					if (")".equals(token))
 					{
-						while(!stack.isEmpty() && order.get(token) <= order.get(stack.peek()))
+						while (!"(".equals(stack.peek()))
 						{
 							queue.add(stack.pop());
 						}
+						stack.pop();
+						continue;
 					}
-					else if(token.equals("("))
+					if (order.containsKey(token)) //operator mapped
 					{
-						stack.push(token);
-					}
-					else if(token.equals(")"))
-					{
-							while(!stack.peek().equals("("))
+						while (!stack.empty() && order.get(token) < order.get(stack.peek()))
+						{
+							if(token.equals("^"))
 							{
+								if(order.get(token) <= order.get(stack.peek()))
+									break;
 								queue.add(stack.pop());
 							}
+							else
+								queue.add(stack.pop());
+						}
+						stack.push(token);
+						continue;
 					}
-					else
-						throw new Exception("invalid input");
+
+					if (isNumber(token))
+					{
+						queue.add(token);
+						continue;
+					}
+					
+					//throw new Exception("invalid input");
 				}
 				
 				//prepare return

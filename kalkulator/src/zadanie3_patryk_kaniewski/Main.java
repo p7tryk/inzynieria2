@@ -24,17 +24,17 @@ public class Main
 		}
 		public static void test() throws Exception
 		{
-				String test1 =  "( 2 + 2 ) * 2";
+				String test1 =  "( 4 - 2 ) * 2";
 				Kalkulator kalkulator1 = new Kalkulator(test1);
-				System.out.println("Expected = 8\n" + "Actual = " + kalkulator1.calculate());
+				System.out.println("Expected = 4\n" + "Actual = " + kalkulator1.calculate());
 				
 				String test2 =  "2 ^ 3 ^ 4";
 				Kalkulator kalkulator2 = new Kalkulator(test2);
-				System.out.println("Expected = 2^14\n" + "Actual = " + kalkulator2.calculate());
+				System.out.println("Expected = E+24\n" + "Actual = " + kalkulator2.calculate());
 				
 				String test3 =  "( ( 2 + 2 ) % 2 )  + ( ( 2 + 2 ) * 2 )";
 				Kalkulator kalkulator3 = new Kalkulator(test3);
-				System.out.println("Expected = 12\n" + "Actual = " + kalkulator3.calculate());
+				System.out.println("Expected = 8\n" + "Actual = " + kalkulator3.calculate());
 				
 		}
 		public static void main(String[] args) throws Exception

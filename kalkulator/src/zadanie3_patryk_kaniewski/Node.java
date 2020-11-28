@@ -23,15 +23,15 @@ class Node
 			switch(operation)
 			{
 			case "+":
-				return n1+n2;
+				return n2+n1;
 			case "-":
-				return n1-n2;
+				return n2-n1;
 			case "*":
-				return n1*n2;
+				return n2*n1;
 			case "/": //TODO dzielenie przez zero
-				return n1/n2;
-			case "%":
-				return n1 % n2;
+				return n2/n1;
+			case "%": //TODO ZJEBANE
+				return n2 % n1;
 			case "^":
 				return Math.pow(n2, n1);
 			}
