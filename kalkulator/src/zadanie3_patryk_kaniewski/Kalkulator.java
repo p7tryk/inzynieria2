@@ -45,6 +45,7 @@ public class Kalkulator
 			}
 		private void growTree(Queue<String> input)
 		{
+				//w koncu logicznie
 				System.out.println(input);
 				
 				Node temp = null;

@@ -2,7 +2,7 @@ package zadanie3_patryk_kaniewski;
 
 class Node
 	{
-		public Node prev; // TODO WTF??????????
+		//public Node prev; // TODO WTF??????????
 		public String key; // TODO private + getters setters
 		public Node left, right;
 
