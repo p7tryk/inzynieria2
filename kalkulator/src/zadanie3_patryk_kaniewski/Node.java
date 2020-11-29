@@ -74,7 +74,7 @@ class Node
 					n2 = Integer.parseInt(right.getValue());
 
 				wynik = doOperation(n1, key, n2);
-				System.out.println(n1 + key + n2 + "=" + wynik);
+				System.out.println(n2 + key + n1 + "=" + wynik);
 
 				return wynik;
 			}

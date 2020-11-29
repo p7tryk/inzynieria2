@@ -46,57 +46,20 @@ public class Kalkulator
 		private void growTree(Queue<String> input)
 		{
 				System.out.println(input);
-				Stack<Node> stack = new Stack<Node>();
+				
 				Node temp = null;
-				Node prev;
-				for(String token: input)
+				Stack<Node> stack = new Stack<Node>();
+				for(String element : input)
 				{
-					System.out.println(token);
-					prev = temp;
-					temp = new Node(token);
-					temp.prev = prev;
-					if(isNumber(token))
-					{
-						stack.push(temp);
-					}
-					else
+					temp = new Node(element);
+					if(!isNumber(element))
 					{
 						temp.left = stack.pop();
-						if(!stack.isEmpty())
-							temp.right = stack.pop();
-						stack.push(temp);
-					}
-				}
-				
-				//System.out.println(stack);
-				
-				tree = new binaryTree(stack.pop());
-				temp=tree.getRoot();
-				
-				while(!stack.isEmpty())
-				{
-					temp.left = stack.pop();
-					if(!stack.isEmpty())
-					{
 						temp.right = stack.pop();
 					}
-					if(isNumber(temp.left.getValue()))
-					{
-						if(isNumber(temp.right.getValue()))
-						{
-							temp = temp.prev;
-						}
-						else
-						{
-							temp = temp.right;
-						}
-					}
-					else
-						temp=temp.left;
-					
-				//temp = temp.left;
+					stack.push(temp);
 				}
-				tree.printInfix();
+				tree = new binaryTree(stack.pop());
 		}
 		
 		private List<String> tokenizer(String input)
