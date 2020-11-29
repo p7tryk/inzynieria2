@@ -18,9 +18,19 @@ public class binaryTree
 		{
 			return  root.calculate();
 		}
-		public void print()
+		public void printInfix()
 		{
 			root.printInfix();
+			System.out.println();
+		}
+		public void printPostfix()
+		{
+			root.printPostfix();
+			System.out.println();
+		}
+		public void printPrefix()
+		{
+			root.printPrefix();
 			System.out.println();
 		}
 		public String toString()

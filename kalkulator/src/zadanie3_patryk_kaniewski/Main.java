@@ -36,6 +36,13 @@ public class Main
 				Kalkulator kalkulator3 = new Kalkulator(test3);
 				System.out.println("Expected = 8\n" + "Actual = " + kalkulator3.calculate());
 				
+				String test4 =  "16 ^ ( 1 / 2 )";
+				Kalkulator kalkulator4 = new Kalkulator(test4);
+				System.out.println("Expected = 4\n" + "Actual = " + kalkulator4.calculate());
+				
+				String test5 =  "16 ^ 1 / 2";
+				Kalkulator kalkulator5 = new Kalkulator(test5);
+				System.out.println("Expected = 8\n" + "Actual = " + kalkulator5.calculate());
 		}
 		public static void main(String[] args) throws Exception
 			{

@@ -73,7 +73,6 @@ public class Kalkulator
 				tree = new binaryTree(stack.pop());
 				temp=tree.getRoot();
 				
-				//TODO rozwinac prawa strone drzewka
 				while(!stack.isEmpty())
 				{
 					temp.left = stack.pop();
@@ -97,7 +96,7 @@ public class Kalkulator
 					
 				//temp = temp.left;
 				}
-				tree.print();
+				tree.printInfix();
 		}
 		
 		private List<String> tokenizer(String input)
@@ -151,14 +150,9 @@ public class Kalkulator
 					{
 						while (!stack.empty() && order.get(token) < order.get(stack.peek()))
 						{
-							if(token.equals("^"))
-							{
-								if(order.get(token) <= order.get(stack.peek()))
+							if(token.equals("^") && order.get(token) <= order.get(stack.peek())) //TODO standaryzowac lewostronnie laczne operatory
 									break;
-								queue.add(stack.pop());
-							}
-							else
-								queue.add(stack.pop());
+							queue.add(stack.pop());
 						}
 						stack.push(token);
 						continue;
