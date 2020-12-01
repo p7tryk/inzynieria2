@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Zad1dom_Patryk_Kaniewski" version="4">
+  <OBJECT>
+    <ID name="Zad1dom_Patryk_Kaniewski" mc="Infrastructure.DiagramSet" uid="ee8807eb-2f32-4114-989b-53842fdf7ea5"/>
+    <PID name="Zad1dom_Patryk_Kaniewski" mc="Standard.Project" uid="313a18ca-1622-437b-8abc-35e2537d267f"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Zad1dom_Patryk_Kaniewski]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
