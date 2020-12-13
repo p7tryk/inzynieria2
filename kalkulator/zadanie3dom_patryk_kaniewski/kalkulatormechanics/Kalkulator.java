@@ -1,4 +1,4 @@
-package zadanie4_patryk_kaniewski;
+package kalkulatormechanics;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ public class Kalkulator
 	{
 		//TODO sane private vs public
 		private binaryTree tree;
-		static private OperatorManager order = new OperatorManager();
+		static private OperatorManager order;
 //		Map<String, Integer> order = new HashMap<>();
 //
 //		private void genHash()
@@ -34,11 +34,15 @@ public class Kalkulator
 		public Kalkulator(String input) throws Exception
 			{
 				//TODO stop creating new object and do it properly
-				//genHash();
+				genHash();
 				growTree((convert(tokenizer(input))));
 				//calculate();
 				//calculateBetter();
 			}
+		public void eval(String input) throws Exception
+		{
+				growTree((convert(tokenizer(input))));
+		}
 
 		private boolean isNumber(String str)
 			{

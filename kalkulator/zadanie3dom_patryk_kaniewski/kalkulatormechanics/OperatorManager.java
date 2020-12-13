@@ -1,4 +1,4 @@
-package zadanie4_patryk_kaniewski;
+package kalkulatormechanics;
 
 import java.util.LinkedList;
 

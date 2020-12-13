@@ -1,5 +1,5 @@
 package operacje;
-import zadanie4_patryk_kaniewski.Node;
+import kalkulatormechanics.Node;
 
 public abstract class Operation
 	{

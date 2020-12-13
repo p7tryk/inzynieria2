@@ -1,4 +1,4 @@
-package zadanie4_patryk_kaniewski;
+package kalkulatormechanics;
 
 import java.util.Scanner;
 
@@ -29,17 +29,17 @@ public class Main
 				System.out.println("Expected = 4\n" + "Actual = " + kalkulator1.calculate());
 				
 				String test2 =  "2 ^ 3 ^ 4";
-				Kalkulator kalkulator2 = new Kalkulator(test2);
-				System.out.println("Expected = E+24\n" + "Actual = " + kalkulator2.calculate());
+				kalkulator1.eval(test2);
+				System.out.println("Expected = E+24\n" + "Actual = " + kalkulator1.calculate());
 				
 				String test3 =  "( ( 2 + 2 ) % 2 )  + ( ( 2 + 2 ) * 2 )";
-				Kalkulator kalkulator3 = new Kalkulator(test3);
-				System.out.println("Expected = 8\n" + "Actual = " + kalkulator3.calculate());
+				kalkulator1.eval(test3);
+				System.out.println("Expected = 8\n" + "Actual = " + kalkulator1.calculate());
 				
 
 				String test4 =  "16 ^ 1 / 2";
-				Kalkulator kalkulator4 = new Kalkulator(test4);
-				System.out.println("Expected = 4\n" + "Actual = " + kalkulator4.calculate());
+				kalkulator1.eval(test4);
+				System.out.println("Expected = 4\n" + "Actual = " + kalkulator1.calculate());
 		}
 		public static void main(String[] args) throws Exception
 			{
