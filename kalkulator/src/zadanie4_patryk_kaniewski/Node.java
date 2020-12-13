@@ -6,7 +6,7 @@ class Node
 		private String key; // TODO private + getters setters
 		public Node left, right;
 
-		static private boolean isNumber(String str)
+		private boolean isNumber(String str)
 			{
 				try
 				{
@@ -72,7 +72,7 @@ class Node
 				else if (right == null)
 					n2 = 0;
 				else
-					n2 = Integer.parseInt(right.getValue());
+					n2 = Double.valueOf(right.getValue());
 
 				wynik = doOperation(n1, key, n2);
 				System.out.println(n2 + key + n1 + "=" + wynik);
@@ -82,33 +82,33 @@ class Node
 
 		public void printInfix()
 			{
-				if (!(left == null))
-					left.printInfix();
-				System.out.print(key);
 				if (!(right == null))
 					right.printInfix();
+				System.out.print(toString());
+				if (!(left == null))
+					left.printInfix();
 			}
 
 		public void printPostfix()
 			{
-				if (!(left == null))
-					left.printInfix();
 				if (!(right == null))
-					right.printInfix();
-				System.out.print(key);
+					right.printPostfix();
+				if (!(left == null))
+					left.printPostfix();
+				System.out.print(toString());
 			}
 
 		public void printPrefix()
 			{
-				System.out.print(key);
-				if (!(left == null))
-					left.printInfix();
+				System.out.print(toString());
 				if (!(right == null))
-					right.printInfix();
+					right.printPrefix();
+				if (!(left == null))
+					left.printPrefix();
 			}
 
-//		public String toString()
-//			{
-//				return key;
-//			}
+		public String toString()
+			{
+				return key + " ";
+			}
 	}

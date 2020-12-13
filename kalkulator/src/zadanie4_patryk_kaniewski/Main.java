@@ -55,9 +55,12 @@ public class Main
 					System.out.println();
 					System.out.println("podaj wyrazenie oddzielone spacjami np ( 2 + 2 ) * 2");
 					String input = in.nextLine();
+					if(input.isEmpty())
+						break;
 					Kalkulator kalkulator = new Kalkulator(input);
-				}
 
+				}
+				System.out.println("koniec");
 				
 				
 			}

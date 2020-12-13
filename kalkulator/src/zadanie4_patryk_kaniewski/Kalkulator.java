@@ -25,6 +25,7 @@ public class Kalkulator
 				order.put("-", 1);
 				order.put("(", 0);
 		}
+		
 		public Kalkulator(String input) throws Exception
 			{
 				//TODO stop creating new object and do it properly
@@ -33,7 +34,7 @@ public class Kalkulator
 				calculate();
 			}
 
-		static boolean isNumber(String str)
+		private boolean isNumber(String str)
 			{
 				try
 				{
@@ -44,6 +45,7 @@ public class Kalkulator
 					return false;
 				}
 			}
+		
 		private void growTree(Queue<String> input)
 		{
 				//https://eduinf.waw.pl/inf/alg/001_search/0118.php
@@ -82,7 +84,7 @@ public class Kalkulator
 		
 		private Queue<String> convert(List<String> input) throws Exception
 			{
-				
+				//TODO odrazu na drzewko a nie ONP -> drzewko
 				try
 				{
 					validate(input);
@@ -141,13 +143,17 @@ public class Kalkulator
 				return queue;
 			}
 		
-		
-		
 		public double calculate()
 		{
 			
 			double output = tree.calculate();
+			System.out.println("print");
 			tree.getRoot().printInfix();
+			System.out.println();
+			tree.getRoot().printPostfix();
+			System.out.println();
+			tree.getRoot().printPrefix();
+			System.out.println();
 			System.out.print("=");
 			System.out.println(output);
 			return output;
