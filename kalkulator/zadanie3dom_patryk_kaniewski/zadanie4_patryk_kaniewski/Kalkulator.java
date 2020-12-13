@@ -13,7 +13,7 @@ public class Kalkulator
 	{
 		//TODO sane private vs public
 		private binaryTree tree;
-		private Factory order;
+		static private OperatorManager order = new OperatorManager();
 //		Map<String, Integer> order = new HashMap<>();
 //
 //		private void genHash()
@@ -28,15 +28,16 @@ public class Kalkulator
 //		}
 		private void genHash()
 		{
-				order = new Factory();
+				order = new OperatorManager();
 		}
 		
 		public Kalkulator(String input) throws Exception
 			{
 				//TODO stop creating new object and do it properly
-				genHash();
+				//genHash();
 				growTree((convert(tokenizer(input))));
-				calculate();
+				//calculate();
+				//calculateBetter();
 			}
 
 		private boolean isNumber(String str)
@@ -147,8 +148,18 @@ public class Kalkulator
 
 				return queue;
 			}
-		
 		public double calculate()
+		{
+				order.printInfix(tree.getRoot());
+				System.out.println();
+				order.printPostfix(tree.getRoot());
+				System.out.println();
+				order.printPrefix(tree.getRoot());
+				System.out.println();
+				return order.calculate(tree.getRoot());
+		}
+
+		public double calculateOld()
 		{
 			
 			double output = tree.calculate();

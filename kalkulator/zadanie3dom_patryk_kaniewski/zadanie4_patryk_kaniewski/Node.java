@@ -1,10 +1,15 @@
 package zadanie4_patryk_kaniewski;
 
-class Node
+public class Node
 	{
 		// public Node prev; // TODO WTF??????????
 		private String key; // TODO private + getters setters
 		public Node left, right;
+
+		public boolean isNumber()
+			{
+				return isNumber(key);
+			}
 
 		private boolean isNumber(String str)
 			{
@@ -50,6 +55,11 @@ class Node
 				left = right = null;
 			}
 
+		public double getDouble()
+			{
+				return Double.valueOf(key);
+			}
+
 		public String getValue()
 			{
 				return key;
@@ -57,7 +67,7 @@ class Node
 
 		public double calculate()
 			{
-				//TODO fix for unary operators
+				// TODO fix for unary operators
 				if (left == null)
 					return 0;
 				double wynik;

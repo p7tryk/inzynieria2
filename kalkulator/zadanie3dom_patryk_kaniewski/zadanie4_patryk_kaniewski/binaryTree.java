@@ -20,21 +20,6 @@ public class binaryTree
 			}
 
 		//TODO lambda the fuck out of it
-		public void walktree(Runnable toRun)
-		{
-				Node newroot = root;
-				walktree(toRun, root);
-		}
-		public void walktree(Runnable toRun, Node temp)
-			{
-				//left side
-				while(temp!=null)
-				{
-					toRun.run();
-					walktree(toRun, temp.left);
-					walktree(toRun, temp.right);
-				}
-			}
 
 		public void printInfix()
 			{

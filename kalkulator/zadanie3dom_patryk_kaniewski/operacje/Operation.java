@@ -1,10 +1,11 @@
 package operacje;
+import zadanie4_patryk_kaniewski.Node;
 
-public class Operation
+public abstract class Operation
 	{
-		static String operation = null;
-		static int priority = 0;
-		static boolean alignment = true;
+		String operation = null;
+		int priority = 0;
+		boolean alignment = true;
 
 		public Operation()
 			{
@@ -26,6 +27,7 @@ public class Operation
 				return operation;
 			}
 
+
 		public double doOperation(double n1, double n2)
 			{
 				System.out.println("unmasked method");
@@ -38,6 +40,16 @@ public class Operation
 			}
 
 		public void printInfix(double n1, double n2)
+			{
+				System.out.print(n1 + " " + operation + " " + n2);
+			}
+
+		public void printPostfix(double n1, double n2)
+			{
+				System.out.print(n1 + " " + n2 + " " + operation);
+			}
+
+		public void printPrefix(double n1, double n2)
 			{
 				System.out.print(n1 + " " + operation + " " + n2);
 			}
