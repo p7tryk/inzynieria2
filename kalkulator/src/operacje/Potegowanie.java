@@ -14,7 +14,7 @@ public class Potegowanie extends Operation
 		@Override
 		public double doOperation(double n1, double n2)
 			{
-				System.out.println("dodawanie");
+				System.out.println("potegowanie");
 				return Math.pow(n1,n2);
 			}
 	}

@@ -14,7 +14,7 @@ public class Mnozenie extends Operation
 		@Override
 		public double doOperation(double n1, double n2)
 			{
-				System.out.println("dodawanie");
+				System.out.println("mnozenie");
 				return n1*n2;
 			}
 	}

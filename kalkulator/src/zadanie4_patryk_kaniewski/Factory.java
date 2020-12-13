@@ -11,33 +11,30 @@ import operacje.Potegowanie;
 
 public class Factory
 	{
-		List<Operation> lista = null;
+		LinkedList<Operation> oplist = new LinkedList<Operation>();
+
 
 		public Factory()
 			{
-				lista = new LinkedList<Operation>();
 				populate();
 			}
 
 		public void populate()
 			{
-				Operation test;
-				Operation test1 = new Mnozenie();
-				lista.add(test1);
-				Operation test2 = new Potegowanie();
-				lista.add(test2);
-				Operation test3 =  new Dodawanie();
-				lista.add(test3);
+				oplist.add(new Potegowanie());
+				oplist.add(new Mnozenie());
+				oplist.add(new Dodawanie());
 				
-				System.out.println(lista);
-				lista.forEach(temp -> {
+				System.out.println(oplist);
+				
+				oplist.forEach(temp -> {
 					temp.debug();
 				}); // much lambda such wow
 			}
 
 		public boolean containsKey(String token)
 			{
-				for (Operation temp : lista)
+				for (Operation temp : oplist)
 				{
 					if (token.equals(temp.key()))
 					{
@@ -52,7 +49,7 @@ public class Factory
 		public int get(String token)
 			{
 				System.out.println("get " + token);
-				for (Operation temp : lista)
+				for (Operation temp : oplist)
 				{
 					if (token.equals(temp.key()))
 						return temp.get();
@@ -63,7 +60,7 @@ public class Factory
 		public boolean alignment(String token)
 			{
 				System.out.println("alignment " + token);
-				for (Operation temp : lista)
+				for (Operation temp : oplist)
 				{
 					if (token.equals(temp.key()))
 						return temp.alignment();
@@ -73,7 +70,7 @@ public class Factory
 
 		public double doOperation(double n1, String token, double n2)
 			{
-				for (Operation temp : lista)
+				for (Operation temp : oplist)
 				{
 					if (token.equals(temp.key()))
 					{
@@ -83,4 +80,5 @@ public class Factory
 				System.out.println("unknown operation");
 				return 0;
 			}
+		
 	}
