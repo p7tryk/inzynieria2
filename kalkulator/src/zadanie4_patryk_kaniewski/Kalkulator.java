@@ -13,17 +13,22 @@ public class Kalkulator
 	{
 		//TODO sane private vs public
 		private binaryTree tree;
-		Map<String, Integer> order = new HashMap<>();
-
+		private Factory order;
+//		Map<String, Integer> order = new HashMap<>();
+//
+//		private void genHash()
+//		{
+//				order.put("%", 2);
+//				order.put("^", 3);
+//				order.put("/", 2);
+//				order.put("*", 2);
+//				order.put("+", 1);
+//				order.put("-", 1);
+//				order.put("(", 0);
+//		}
 		private void genHash()
 		{
-				order.put("%", 2);
-				order.put("^", 3);
-				order.put("/", 2);
-				order.put("*", 2);
-				order.put("+", 1);
-				order.put("-", 1);
-				order.put("(", 0);
+				order = new Factory();
 		}
 		
 		public Kalkulator(String input) throws Exception
@@ -119,7 +124,7 @@ public class Kalkulator
 					{
 						while (!stack.empty() && order.get(token) < order.get(stack.peek()))
 						{
-							if(token.equals("^") && order.get(token) <= order.get(stack.peek())) //TODO standaryzowac lewostronnie laczne operatory
+							if(order.alignment(token) && order.get(token) <= order.get(stack.peek())) //TODO standaryzowac lewostronnie laczne operatory
 									break;
 							queue.add(stack.pop());
 						}
