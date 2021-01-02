@@ -13,11 +13,12 @@ public class Modulo extends Operation
 				operation = "%";
 				priority = 2;
 				alignment = true;
+				argumentCount = 2;
 				//System.out.println(this);
 		}
 		@Override
 		public double doOperation(List<Double> lista)
 			{
-				return lista.get(0)%lista.get(1); //div#0
+				return lista.get(1)%lista.get(0); //div#0
 			}
 	}

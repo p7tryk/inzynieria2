@@ -46,6 +46,7 @@ public class Main
 				
 				test();
 				
+				Kalkulator kalkulator = new Kalkulator("2 + 2");
 				Scanner in = new Scanner(System.in);
 				while (true)
 				{
@@ -54,7 +55,9 @@ public class Main
 					String input = in.nextLine();
 					if(input.isEmpty())
 						break;
-					Kalkulator kalkulator = new Kalkulator(input);
+					kalkulator.eval(input);
+					System.out.println(kalkulator.calculate());
+
 
 				}
 				System.out.println("koniec");

@@ -40,24 +40,18 @@ public final class OperatorManager
 		public double calculate(Node root)
 		{
 				//im sick of this
+				//but its composite
 				List<Double> listaobecna = new LinkedList<Double>(); 
 				if(root.size()==0)
 					return root.getDouble();	
 			
 				root.getChildren().forEach(node -> {
 					if(node.isNumber())
-					{
 						listaobecna.add(node.getDouble());
-					}
 					else
 						listaobecna.add(calculate(node));
-					
-				});
+				}); //such lambda much wow
 				
-					
-				
-				
-
 				return doOperation(root.getValue(),listaobecna); //this is stupid
 		}
 		public void printInfix(Node root)
@@ -130,6 +124,16 @@ public final class OperatorManager
 						return temp.alignment();
 				}
 				return true;
+			}
+		public int getArgumentCount(String token)
+			{
+				//System.out.println("alignment " + token);
+				for (Operation temp : oplist)
+				{
+					if (token.equals(temp.key()))
+						return temp.getArgumentCount();
+				}
+				return 0;
 			}
 
 		public double doOperation(String token, List<Double> lista)

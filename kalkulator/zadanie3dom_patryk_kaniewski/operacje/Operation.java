@@ -8,6 +8,7 @@ public abstract class Operation
 		String operation = null;
 		int priority = 0;
 		boolean alignment = true;
+		int argumentCount = 0;
 
 		public Operation()
 			{
@@ -29,7 +30,6 @@ public abstract class Operation
 				return operation;
 			}
 
-
 		public double doOperation(List<Double> lista)
 			{
 				System.out.println("unmasked method");
@@ -41,7 +41,12 @@ public abstract class Operation
 				return alignment;
 			}
 
-		public void printInfix(List<Double> lista) //TODO check list boundaries
+		public int getArgumentCount()
+			{
+				return argumentCount;
+			}
+
+		public void printInfix(List<Double> lista) // TODO check list boundaries
 			{
 				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
 			}

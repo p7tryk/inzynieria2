@@ -58,8 +58,8 @@ public class Kalkulator
 					temp = new Node(element);
 					if(!isNumber(element))
 					{
-						temp.addChild(stack.pop());
-						temp.addChild(stack.pop());
+						for(int i=0; i<order.getArgumentCount(element);i++) //provision for more arguments
+							temp.addChild(stack.pop());	
 					}
 					stack.push(temp);
 				}
@@ -83,7 +83,7 @@ public class Kalkulator
 		
 		private Queue<String> convert(List<String> input) throws Exception
 			{
-				//TODO odrazu na drzewko a nie ONP -> drzewko
+				//TODO odrazu na drzewko a nie ONP -> drzewko lolnope
 				try
 				{
 					validate(input);
