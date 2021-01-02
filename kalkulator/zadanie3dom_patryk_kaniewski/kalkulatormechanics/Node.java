@@ -5,8 +5,7 @@ import java.util.List;
 
 public class Node
 	{
-		// public Node prev; // TODO WTF??????????
-		private String key; // TODO private + getters setters
+		private String key; 
 		private List<Node> lista;
 
 		public boolean isNumber()

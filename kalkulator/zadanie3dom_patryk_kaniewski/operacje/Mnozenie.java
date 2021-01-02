@@ -2,8 +2,6 @@ package operacje;
 
 import java.util.List;
 
-import kalkulatormechanics.Node;
-
 public class Mnozenie extends Operation
 	{
 		@Override

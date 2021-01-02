@@ -6,9 +6,9 @@ import java.util.List;
 import operacje.Dodawanie;
 import operacje.Dzielenie;
 import operacje.Mnozenie;
+import operacje.Modulo;
 import operacje.Odejmowanie;
 import operacje.Operation;
-import operacje.Modulo;
 import operacje.Potegowanie;
 
 public final class OperatorManager
@@ -21,7 +21,7 @@ public final class OperatorManager
 				populate();
 			}
 
-		public void populate()
+		public void populate() //factory
 			{
 				oplist.add(new Potegowanie());
 				oplist.add(new Mnozenie());
@@ -52,11 +52,10 @@ public final class OperatorManager
 						listaobecna.add(calculate(node));
 				}); //such lambda much wow
 				
-				return doOperation(root.getValue(),listaobecna); //this is stupid
+				return doOperation(root.getValue(),listaobecna); //this is slightly less stupid now
 		}
 		public void printInfix(Node root)
 		{
-
 				if(root.size()>1) //right
 					printInfix(root.get(1));
 				
@@ -69,8 +68,6 @@ public final class OperatorManager
 		}
 		public void printPostfix(Node root)
 		{
-	
-
 				if(root.size()>1) //right
 					printPostfix(root.get(1));
 				
@@ -82,7 +79,6 @@ public final class OperatorManager
 		}
 		public void printPrefix(Node root)
 		{
-				//TODO after fixing printing infix this too
 
 				System.out.print(root.getValue());
 				System.out.print(" ");
@@ -106,7 +102,7 @@ public final class OperatorManager
 					}
 				}
 				//System.out.println("false containsKey " + token);
-				return false;
+				return false; 
 			}
 
 		public int get(String token)
@@ -117,7 +113,7 @@ public final class OperatorManager
 					if (token.equals(temp.key()))
 						return temp.get();
 				}
-				return 0;
+				return 0; //doesn't actually happen because of tree building process
 			}
 
 		public boolean alignment(String token)
@@ -128,7 +124,7 @@ public final class OperatorManager
 					if (token.equals(temp.key()))
 						return temp.alignment();
 				}
-				return true;
+				return true; //doesn't actually happen because of tree building process
 			}
 		public int getArgumentCount(String token)
 			{
@@ -138,7 +134,7 @@ public final class OperatorManager
 					if (token.equals(temp.key()))
 						return temp.getArgumentCount();
 				}
-				return 0;
+				return 0; //doesn't actually happen because of tree building process
 			}
 
 		public double doOperation(String token, List<Double> lista)
@@ -150,7 +146,7 @@ public final class OperatorManager
 						return temp.doOperation(lista);
 					}
 				}
-				System.out.println("unknown operation");
+				System.out.println("unknown operation"); //doesn't actually happen because of tree building process
 				return 0;
 			}
 		

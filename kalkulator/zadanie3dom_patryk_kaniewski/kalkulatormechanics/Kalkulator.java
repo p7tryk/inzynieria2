@@ -1,16 +1,13 @@
 package kalkulatormechanics;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 import java.util.Stack;
 
 public class Kalkulator
 	{
-		// TODO sane private vs public
 		private binaryTree tree;
 		static private OperatorManager order;
 
@@ -19,9 +16,13 @@ public class Kalkulator
 				order = new OperatorManager();
 			}
 
+		public Kalkulator()
+			{
+				genHash();
+			}
+
 		public Kalkulator(String input) throws Exception
 			{
-				// TODO stop creating new object and do it properly
 				genHash();
 				growTree((convert(tokenizer(input))));
 				// calculate();
@@ -68,7 +69,7 @@ public class Kalkulator
 
 		private List<String> tokenizer(String input)
 			{
-				// TODO better tokenization
+				// TODO better tokenization //LOWPRIO
 				List<String> lista;
 				lista = Arrays.asList(input.split(" "));
 
@@ -77,13 +78,13 @@ public class Kalkulator
 
 		private void validate(List<String> input) throws Exception
 			{
-				// TODO input validation
+				// TODO input validation //LOWPRIO
 				// throw new Exception("invalid input");
 			}
 
 		private Queue<String> convert(List<String> input) throws Exception
 			{
-				// TODO odrazu na drzewko a nie ONP -> drzewko lolnope
+				// TODO odrazu na drzewko a nie ONP -> drzewko lolnope //MEDPRIO
 				try
 				{
 					validate(input);

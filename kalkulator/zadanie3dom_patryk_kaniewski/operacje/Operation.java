@@ -1,7 +1,6 @@
 package operacje;
 
 import java.util.List;
-import kalkulatormechanics.Node;
 
 public abstract class Operation
 	{
@@ -46,7 +45,7 @@ public abstract class Operation
 				return argumentCount;
 			}
 
-		public void printInfix(List<Double> lista) // TODO check list boundaries
+		public void printInfix(List<Double> lista) // just debug prints nothing serious
 			{
 				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
 			}

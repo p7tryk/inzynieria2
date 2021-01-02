@@ -47,6 +47,7 @@ public class Main
 				test();
 				
 				Kalkulator kalkulator = new Kalkulator("2 + 2");
+				@SuppressWarnings("resource") //nobody cares
 				Scanner in = new Scanner(System.in);
 				while (true)
 				{
