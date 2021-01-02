@@ -1,4 +1,6 @@
 package operacje;
+
+import java.util.List;
 import kalkulatormechanics.Node;
 
 public abstract class Operation
@@ -28,7 +30,7 @@ public abstract class Operation
 			}
 
 
-		public double doOperation(double n1, double n2)
+		public double doOperation(List<Double> lista)
 			{
 				System.out.println("unmasked method");
 				return 0;
@@ -39,19 +41,19 @@ public abstract class Operation
 				return alignment;
 			}
 
-		public void printInfix(double n1, double n2)
+		public void printInfix(List<Double> lista) //TODO check list boundaries
 			{
-				System.out.print(n1 + " " + operation + " " + n2);
+				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
 			}
 
-		public void printPostfix(double n1, double n2)
+		public void printPostfix(List<Double> lista)
 			{
-				System.out.print(n1 + " " + n2 + " " + operation);
+				System.out.print(lista.get(1) + " " + lista.get(2) + " " + operation);
 			}
 
-		public void printPrefix(double n1, double n2)
+		public void printPrefix(List<Double> lista)
 			{
-				System.out.print(n1 + " " + operation + " " + n2);
+				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
 			}
 
 		@Override

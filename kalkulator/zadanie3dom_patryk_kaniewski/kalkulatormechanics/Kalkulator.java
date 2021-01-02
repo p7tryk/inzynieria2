@@ -14,18 +14,7 @@ public class Kalkulator
 		//TODO sane private vs public
 		private binaryTree tree;
 		static private OperatorManager order;
-//		Map<String, Integer> order = new HashMap<>();
-//
-//		private void genHash()
-//		{
-//				order.put("%", 2);
-//				order.put("^", 3);
-//				order.put("/", 2);
-//				order.put("*", 2);
-//				order.put("+", 1);
-//				order.put("-", 1);
-//				order.put("(", 0);
-//		}
+
 		private void genHash()
 		{
 				order = new OperatorManager();
@@ -69,8 +58,8 @@ public class Kalkulator
 					temp = new Node(element);
 					if(!isNumber(element))
 					{
-						temp.left = stack.pop();
-						temp.right = stack.pop();
+						temp.addChild(stack.pop());
+						temp.addChild(stack.pop());
 					}
 					stack.push(temp);
 				}
@@ -163,19 +152,4 @@ public class Kalkulator
 				return order.calculate(tree.getRoot());
 		}
 
-		public double calculateOld()
-		{
-			
-			double output = tree.calculate();
-			System.out.println("print");
-			tree.getRoot().printInfix();
-			System.out.println();
-			tree.getRoot().printPostfix();
-			System.out.println();
-			tree.getRoot().printPrefix();
-			System.out.println();
-			System.out.print("=");
-			System.out.println(output);
-			return output;
-		}
 	}

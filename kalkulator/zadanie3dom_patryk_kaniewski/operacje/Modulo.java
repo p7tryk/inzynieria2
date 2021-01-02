@@ -1,5 +1,9 @@
 package operacje;
 
+import java.util.List;
+
+import kalkulatormechanics.Node;
+
 public class Modulo extends Operation
 	{
 		@Override
@@ -12,9 +16,8 @@ public class Modulo extends Operation
 				//System.out.println(this);
 		}
 		@Override
-		public double doOperation(double n1, double n2)
+		public double doOperation(List<Double> lista)
 			{
-				//System.out.println("dzielenie");
-				return n1%n2; //TODO div by 0
+				return lista.get(0)%lista.get(1); //div#0
 			}
 	}

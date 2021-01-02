@@ -1,7 +1,7 @@
 package kalkulatormechanics;
 
 import java.util.LinkedList;
-
+import java.util.List;
 
 import operacje.Dodawanie;
 import operacje.Dzielenie;
@@ -30,6 +30,7 @@ public final class OperatorManager
 				oplist.add(new Modulo());
 				oplist.add(new Dzielenie());
 				
+				
 //				System.out.println(oplist);
 //				
 //				oplist.forEach(temp -> {
@@ -38,45 +39,46 @@ public final class OperatorManager
 			}
 		public double calculate(Node root)
 		{
-				double n1;
-				double n2;
-				if(root.left == null && root.right == null)
+				//im sick of this
+				List<Double> listaobecna = new LinkedList<Double>(); 
+				if(root.size()==0)
 					return root.getDouble();	
+			
+				root.getChildren().forEach(node -> {
+					if(node.isNumber())
+					{
+						listaobecna.add(node.getDouble());
+					}
+					else
+						listaobecna.add(calculate(node));
+					
+				});
 				
-				if(root.left.isNumber())
-					n1 = root.left.getDouble();
-				else
-					n1 = calculate(root.left);
-				if(root.right.isNumber())
-					n2 = root.right.getDouble();
-				else
-					n2 = calculate(root.left);
 					
 				
-				//Lambda this out maybe with prints?
-				double temp = doOperation(n2,root.getValue(),n1);
-				//System.out.print("doing:" + n2 + " " + root.getValue() + " " + n1 + " = "+ temp);
-				return temp;
+				
+
+				return doOperation(root.getValue(),listaobecna); //this is stupid
 		}
 		public void printInfix(Node root)
 		{
-				if(root.right != null)
-					printInfix(root.right);
+				if(root.size()<2) //right
+					printInfix(root.get(2));
 				
 				System.out.print(root.getValue());
 				System.out.print(" ");
 				
 
-				if(root.left != null)
-					printInfix(root.left);
+				if(root.size()<1) //left
+					printInfix(root.get(1));
 		}
 		public void printPostfix(Node root)
 		{
-				if(root.right != null)
-					printInfix(root.right);
+				if(root.size()<2) //right
+					printInfix(root.get(2));
 				
-				if(root.left != null)
-					printInfix(root.left);
+				if(root.size()<1) //left
+					printInfix(root.get(1));
 
 				System.out.print(root.getValue());
 				System.out.print(" ");
@@ -86,11 +88,11 @@ public final class OperatorManager
 				System.out.print(root.getValue());
 				System.out.print(" ");
 				
-				if(root.right != null)
-					printInfix(root.right);
+				if(root.size()<2) //right
+					printInfix(root.get(2));
 				
-				if(root.left != null)
-					printInfix(root.left);
+				if(root.size()<1) //left
+					printInfix(root.get(1));
 		}
 		
 
@@ -130,13 +132,13 @@ public final class OperatorManager
 				return true;
 			}
 
-		public double doOperation(double n1, String token, double n2)
+		public double doOperation(String token, List<Double> lista)
 			{
 				for (Operation temp : oplist)
 				{
 					if (token.equals(temp.key()))
 					{
-						return temp.doOperation(n1, n2);
+						return temp.doOperation(lista);
 					}
 				}
 				System.out.println("unknown operation");

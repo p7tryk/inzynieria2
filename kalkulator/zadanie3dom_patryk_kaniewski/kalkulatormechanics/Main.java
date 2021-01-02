@@ -6,21 +6,21 @@ public class Main
 	{
 		public static void treetest()
 		{
-				//tree test
-				binaryTree tree = new binaryTree("+");
-				/*
-				 * 	2+2*2
-				 * 					+
-				 * 			*				2
-				 * 		2		2
-				 * 
-				 *  = 6
-				 */
-				tree.root.left = new Node("*");
-				tree.root.left.left = new Node("2");
-				tree.root.left.right = new Node("2");
-				tree.root.right = new Node("2");
-				tree.calculate();
+//				//tree test
+//				binaryTree tree = new binaryTree("+");
+//				/*
+//				 * 	2+2*2
+//				 * 					+
+//				 * 			*				2
+//				 * 		2		2
+//				 * 
+//				 *  = 6
+//				 */
+//				tree.root.left = new Node("*");
+//				tree.root.left.left = new Node("2");
+//				tree.root.left.right = new Node("2");
+//				tree.root.right = new Node("2");
+//				tree.calculate();
 		}
 		public static void test() throws Exception
 		{
