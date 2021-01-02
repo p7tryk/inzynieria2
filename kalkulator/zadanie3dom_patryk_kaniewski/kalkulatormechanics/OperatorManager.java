@@ -56,37 +56,42 @@ public final class OperatorManager
 		}
 		public void printInfix(Node root)
 		{
-				if(root.size()<2) //right
-					printInfix(root.get(2));
+
+				if(root.size()>1) //right
+					printInfix(root.get(1));
 				
 				System.out.print(root.getValue());
 				System.out.print(" ");
 				
 
-				if(root.size()<1) //left
-					printInfix(root.get(1));
+				if(root.size()>0) //left
+					printInfix(root.get(0));
 		}
 		public void printPostfix(Node root)
 		{
-				if(root.size()<2) //right
-					printInfix(root.get(2));
+	
+
+				if(root.size()>1) //right
+					printPostfix(root.get(1));
 				
-				if(root.size()<1) //left
-					printInfix(root.get(1));
+				if(root.size()>0) //left
+					printPostfix(root.get(0));
 
 				System.out.print(root.getValue());
 				System.out.print(" ");
 		}
 		public void printPrefix(Node root)
 		{
+				//TODO after fixing printing infix this too
+
 				System.out.print(root.getValue());
 				System.out.print(" ");
 				
-				if(root.size()<2) //right
-					printInfix(root.get(2));
+				if(root.size()>1) //right
+					printPrefix(root.get(1));
 				
-				if(root.size()<1) //left
-					printInfix(root.get(1));
+				if(root.size()>0) //left
+					printPrefix(root.get(0));
 		}
 		
 
