@@ -9,11 +9,11 @@ import java.util.Stack;
 public class Kalkulator
 	{
 		private binaryTree tree;
-		static private OperatorManager order;
+		static private OperatorManager order = null;
 
 		private void genHash()
 			{
-				order = new OperatorManager();
+				order = OperatorManager.getOperatorManager();
 			}
 
 		public Kalkulator()
@@ -24,7 +24,7 @@ public class Kalkulator
 		public Kalkulator(String input) throws Exception
 			{
 				genHash();
-				growTree((convert(tokenizer(input))));
+				eval(input);
 				// calculate();
 				// calculateBetter();
 			}
@@ -116,9 +116,10 @@ public class Kalkulator
 					}
 					if (order.containsKey(token)) // operator mapped
 					{
-						while (!stack.empty() && order.get(token) < order.get(stack.peek()))
+						while (!stack.empty() && order.getPriority(token) < order.getPriority(stack.peek()))
 						{
-							if (order.alignment(token) && order.get(token) <= order.get(stack.peek()))
+							if (order.getAlignment(token)
+									&& order.getPriority(token) <= order.getPriority(stack.peek()))
 								break;
 							queue.add(stack.pop());
 						}

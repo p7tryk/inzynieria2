@@ -5,19 +5,20 @@ import java.util.List;
 public class Dzielenie extends Operation
 	{
 		@Override
-		public void init()
-		{
-				//System.out.println("constructs dzielenie");
+		protected void init()
+			{
+				// System.out.println("constructs dzielenie");
 				operation = "/";
 				priority = 2;
 				alignment = true;
 				argumentCount = 2;
-				//System.out.println(this);
-		}
+				// System.out.println(this);
+			}
+
 		@Override
 		public double doOperation(List<Double> lista)
 			{
 
-				return lista.get(1)/lista.get(0); //TODO div#0
+				return lista.get(1) / lista.get(0); // TODO div#0
 			}
 	}

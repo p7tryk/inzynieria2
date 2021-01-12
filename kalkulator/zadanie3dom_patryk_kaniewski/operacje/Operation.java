@@ -4,17 +4,18 @@ import java.util.List;
 
 public abstract class Operation
 	{
-		String operation = null;
-		int priority = 0;
-		boolean alignment = true;
-		int argumentCount = 0;
+		protected String operation = null;
+		protected int priority = 0;
+		protected boolean alignment = true;
+		protected int argumentCount = 0;
 
 		public Operation()
 			{
 				init();
+				// jestem leniwy i latwiej copy paste
 			}
 
-		public void init()
+		protected void init()
 			{
 				System.out.println("unmasked method");
 			}
@@ -44,21 +45,22 @@ public abstract class Operation
 			{
 				return argumentCount;
 			}
-
-		public void printInfix(List<Double> lista) // just debug prints nothing serious
-			{
-				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
-			}
-
-		public void printPostfix(List<Double> lista)
-			{
-				System.out.print(lista.get(1) + " " + lista.get(2) + " " + operation);
-			}
-
-		public void printPrefix(List<Double> lista)
-			{
-				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
-			}
+		// just debug prints nothing serious
+//		public void printInfix(List<Double> lista) 
+//			{
+//				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
+//			}
+//
+//		public void printPostfix(List<Double> lista)
+//			{
+//				System.out.print(lista.get(1) + " " + lista.get(2) + " " + operation);
+//			}
+//
+//		public void printPrefix(List<Double> lista)
+//			{
+//				System.out.print(lista.get(1) + " " + operation + " " + lista.get(2));
+//			}
+		// just debug prints nothing serious
 
 		@Override
 		public String toString()

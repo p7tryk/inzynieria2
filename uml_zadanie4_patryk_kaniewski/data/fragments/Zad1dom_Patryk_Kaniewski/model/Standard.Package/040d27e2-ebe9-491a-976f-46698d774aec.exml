@@ -21,8 +21,9 @@
         <COMPID name="OperatorManager" mc="Standard.Class" uid="5f08c8a8-1485-4843-ba4c-ed13080e5f9b"/>
         <COMPID name="Operacja" mc="Standard.Class" uid="89c42b5c-3478-4297-934b-bdf2bf61dc06"/>
         <COMPID name="Dodawanie" mc="Standard.Class" uid="746a30df-156f-43ec-9418-062a7089f09d"/>
-        <COMPID name="Class1" mc="Standard.Class" uid="5a8729a2-31d8-456f-846d-fe5f083ec5f3"/>
-        <COMPID name="Class2" mc="Standard.Class" uid="3d0efa7f-5a3e-49f0-b7f2-e66e40f3ac3d"/>
+        <COMPID name="Mnozenie" mc="Standard.Class" uid="5a8729a2-31d8-456f-846d-fe5f083ec5f3"/>
+        <COMPID name="Potegowanie" mc="Standard.Class" uid="3d0efa7f-5a3e-49f0-b7f2-e66e40f3ac3d"/>
+        <COMPID name="Component" mc="Standard.Component" uid="2b65a00c-4d8f-4955-bc49-e673f7e3d120"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="zad1dom_patryk_kaniewski Class diagram" mc="Standard.ClassDiagram" uid="d06409b2-4724-4ad1-8e20-a5ead4cb0871"/>
