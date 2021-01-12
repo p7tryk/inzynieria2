@@ -9,7 +9,7 @@ import java.util.Stack;
 public class Kalkulator
 	{
 		private binaryTree tree;
-		static private OperatorManager order = null;
+		private OperatorManager order = null;
 
 		private void genHash()
 			{
