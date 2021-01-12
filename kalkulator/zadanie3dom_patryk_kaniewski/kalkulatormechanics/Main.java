@@ -26,6 +26,7 @@ public class Main
 		public static void test() throws Exception
 			{
 				String test1 = "( 4 - 2 ) * 2";
+
 				Kalkulator kalkulator1 = new Kalkulator(test1);
 				System.out.println("Expected = 4\n" + "Actual = " + kalkulator1.calculate());
 

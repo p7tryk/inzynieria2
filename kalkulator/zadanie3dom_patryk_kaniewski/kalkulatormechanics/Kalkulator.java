@@ -31,6 +31,7 @@ public class Kalkulator
 
 		public void eval(String input) throws Exception
 			{
+				System.out.println("eval " + input);
 				growTree((convert(tokenizer(input))));
 			}
 
