@@ -1,0 +1,57 @@
+* wzorce kreacyjne
+** singleton
+[[./singleton.png]]
++ zagwaratowac ze jest jeden obiekt tego typu (np. konfiguracja/stan globalny)
+*** implementacja
+#+begin_src java
+
+class singleton {
+
+private static singleton; //nasz obiekt
+public static singleton getSingleton() //statyczna publiczna funkcja do otrzymywania tego stanu
+{
+	return singleton;
+}
+
+};
+
+#+end_src
+
+* wzorce behawioralne 
+** Obserwator
+[[./obserwator.png]]
++ okresla zaleznosc jeden do wiele miedzy obiektami
++ gdy jeden obiekt zmienia stan wszystkie obiekty od niego zalezne sa o tym automatycznie powiadamiane i uaktualniane (np. w kalkulatorze mamy 3 klasy wypisywania ktore maja w sobie string do wypisywania, kiedy wprowadzamy nowe dzialanie wszyskie sa updatowane)
++ wydaje mi sie ze realizowany w grach -> bo trzeba updatowac stan obiektow a one musza znac stan innych
+*** kontekst
+zmiana stanu jednego obiektu wymaga zmiany innych i nie wiadomo, ile obiektow trzeba zmienic
+*** problem
+obiekt powinien byc w stanie powiadamiac inne obiekty, nie przyjmujac zadnych zalozen co do tego, co te obiekty reprezentuja - wynikiem sa luzniejsze powiazania miedzy obiektami
+*** implementacja
+https://refactoring.guru/design-patterns/observer
+zagwarantowanie ze przed rozeslaniem powiadomienia stan obserwowanergo jest wewnetrznie spojny
+
+
+model push (obserwowany wysyla wszystkie informacje same)
+model pull (obserwowany wysyla POWIADOMIENIE a kazdy inny pyta sie to czego potrzebuje z jakiejs zmiany)
+** Stan
++ umozliwia obiektowi zmiane zachowania, gdy zmienia sie jego stan wewnetrzny (np. ktos zmienia typ konta bankowego)
+*** kontekst
++ zachowanie obiektu zalezy od jego stanu, a obiekt ten musi zmieniac swoje zachowanie w czasie wykonywania programu w zaleznosci od stanu
++ operacje zawieraja duze, wieloczesciowe instrukcje warunkowe ktore zaleza od stanu obiektu - wzorzec State przenosi kazde rozgalezienie do specjalnej klasy z inna implementacja np. pobierz podatek
+*** problem
+chemy umozliwic obiektowi zmiane zachowania w momencie zmiany wewnetrzengo stanu obiektu hermetyzujac stan w postaci klasy
+*** implementacja
+[[./stan.png]]
+* wzorce strukturalne
+** kompozyt
+[[./kompozyt.png]]
+TLDR: Drzewko w ktorym lisc zawiera siebie + liste dzieci
+
++ zadaniem jest laczenie obiektow w struktura tak, ze reprezentuja hierarchie czesci-calosci, unifikujac dostep do kolekcji jak i pojedynczego obiektu.
++ + umozliwa to klientom jednolite traktowanie pojedynczych obiektow i rowniez ich kompozycji
+
+*** kontekst
+chcemy przedstawic hierarchie obiektow czesc-calosc Hierarchia obiektow ma wspolna klase bazowa (abstrakcyjną)
+*** problem
+chcemy, aby klienci mogli ignorowac roznice miedzy zlozeniami obiektow a pojedynczymi obiektami - klienci beda wtedy jednakowo traktowac wszyskie obiekty wystepujace w strukturze
