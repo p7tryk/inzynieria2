@@ -1,3 +1,4 @@
+* UML
 [[./zwiazki_UML.png]]
 
 * BMPN
@@ -7,6 +8,7 @@
 * wzorce kreacyjne
 ** singleton
 https://refactoring.guru/design-patterns/singleton
+
 [[./singleton.png]]
 + zagwaratowac ze jest jeden obiekt tego typu (np. konfiguracja/stan globalny)
 *** implementacja
@@ -205,11 +207,11 @@ iterator
 *factory method*
 
 ** ktore stwierdzenia sa prawdziwy, gdy aktor A uogulnia aktora B
-B moze komunikowac sie z tymi samymi przypadkami uzycia co A
-B dziedziczy wszystkie zwiazki A
++ B moze komunikowac sie z tymi samymi przypadkami uzycia co A
++ B dziedziczy wszystkie zwiazki A
 ** ktore z ponizszych stwierdzen charaktyryzuja przypadki uzycia
-przypadki uzycia posuja procedyury stosowane w systemie
-???przypadki uzycia posuja funkcjonalnosc lub zachowanie oczekiwane od opracowanego systemu???
++ przypadki uzycia posuja procedyury stosowane w systemie
++ ???przypadki uzycia posuja funkcjonalnosc lub zachowanie oczekiwane od opracowanego systemu???
 ** wybierz zdania prawdziwe okreslajace pojecie *bledu logicznego* w oprogramowaniu
 + wiekszosc wysilkow, podzas testowania programu, koncentruje sie na ich znajdowaniu
 + blad  logiczny powstaje, gdy zewnetrzne zdarzenie lub nie wykryt blad skladni zmusza proces do zatrzymania swojego dzialania
@@ -232,10 +234,18 @@ przypadki uzycia posuja procedyury stosowane w systemie
 + Fasada
 + Pyłek
 + Pełnomocnik
+** Wybierz zdania prawdziwie określające pojęcie złożoności cyklometrycznej
++ Złożoność cyklometryczna jest to liczba niezależnych ścieżek w programie
++ Złożoność cyklometryczna jest podstawową miarą złożoności dowolnego fragmentu kodu programu
+** Które z poniższych stwierdzeń charakteryzuje przypadki użycia
++ Przypadki użycia opisują procedury stosowane w systemie
++ Przypadki użycia opisują opisują funkcjonalność lub zachowanie oczekiwane od opracowywanego systemu
 * pytania otwarte odpowiedz
-
+** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
+** opisac silna agregacja
 * pytania otwarte modelio
 ** system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety
+** zamodeluj podsystem obslugi klienta w sklepie internetowych Zacznij od opisu wymagan i procesow
 
 
 
@@ -243,4 +253,3 @@ przypadki uzycia posuja procedyury stosowane w systemie
 
 
 
-ZW DO 17:20
