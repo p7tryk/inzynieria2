@@ -11,6 +11,8 @@ https://refactoring.guru/design-patterns/singleton
 
 [[./singleton.png]]
 + zagwaratowac ze jest jeden obiekt tego typu (np. konfiguracja/stan globalny)
++ gdy w twoim programie ma prawo istnieć wyłącznie jeden ogólnodostępny obiekt danej klasy. Przykładem może być połączenie z bazą danych, którego używa wiele fragmentów programu.
++ gdy potrzebujesz ściślejszej kontroli nad zmiennymi globalnymi.
 *** implementacja
 #+begin_src java
 

@@ -1,4 +1,4 @@
-% Created 2021-01-27 Wed 11:07
+% Created 2021-02-08 Mon 17:46
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -26,22 +26,36 @@
  pdflang={English}}
 \begin{document}
 
-\tableofcontents \clearpage\begin{center}
+\tableofcontents \clearpage\section{UML}
+\label{sec:orgd62a377}
+\begin{center}
 \includegraphics[width=.9\linewidth]{./zwiazki_UML.png}
 \end{center}
 
+\section{BMPN}
+\label{sec:orgce25d9a}
+\subsection{zdarzenia}
+\label{sec:orgeedc754}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./zdarzenia.png}
+\end{center}
+
 \section{wzorce kreacyjne}
-\label{sec:orga7a56ae}
+\label{sec:orgd25f88e}
 \subsection{singleton}
-\label{sec:org6a6d852}
+\label{sec:orgb504d1a}
+\url{https://refactoring.guru/design-patterns/singleton}
+
 \begin{center}
 \includegraphics[width=.9\linewidth]{./singleton.png}
 \end{center}
 \begin{itemize}
 \item zagwaratowac ze jest jeden obiekt tego typu (np. konfiguracja/stan globalny)
+\item gdy w twoim programie ma prawo istnieć wyłącznie jeden ogólnodostępny obiekt danej klasy. Przykładem może być połączenie z bazą danych, którego używa wiele fragmentów programu.
+\item gdy potrzebujesz ściślejszej kontroli nad zmiennymi globalnymi.
 \end{itemize}
 \subsubsection{implementacja}
-\label{sec:org0403ba6}
+\label{sec:org50a55a8}
 \begin{verbatim}
 
 class singleton {
@@ -57,10 +71,124 @@ public static singleton getSingleton() //statyczna publiczna funkcja do otrzymyw
 };
 
 \end{verbatim}
+\subsection{metoda wytworcza (factory method)}
+\label{sec:org08db67b}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./factory.png}
+\end{center}
+\begin{itemize}
+\item udostępnia interfejs do tworzenia obiektów w ramach klasy bazowej, ale pozwala podklasom zmieniać typ tworzonych obiektów.
+\item Stosuj Metodę Wytwórczą gdy nie wiesz z góry jakie typy obiektów pojawią się w twoim programie i jakie będą między nimi zależności.
+\item Metody Wytwórczej gdy zamierzasz pozwolić użytkującym twą bibliotekę lub framework rozbudowywać jej wewnętrzne komponenty.
+\item gdy chcesz oszczędniej wykorzystać zasoby systemowe poprzez ponowne wykorzystanie już istniejących obiektów, zamiast odbudowywać je raz za razem.
+\end{itemize}
+
+Metoda Wytwórcza oddziela kod konstruujący produkty od kodu który faktycznie z tych produktów korzysta. Dlatego też łatwiej jest rozszerzać kod konstruujący produkty bez konieczności ingerencji w resztę kodu.
+\subsection{fabryka abstrakcyjna (abstract factory)}
+\label{sec:org928369b}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./abstractfactory.png}
+\end{center}
+\begin{itemize}
+\item który pozwala tworzyć rodziny spokrewnionych ze sobą obiektów bez określania ich konkretnych klas.
+\item gdy twój kod ma działać na produktach z różnych rodzin, ale jednocześnie nie chcesz, aby ściśle zależał od konkretnych klas produktów. Mogą one bowiem być nieznane na wcześniejszym etapie tworzenia programu, albo chcesz umożliwić przyszłą rozszerzalność aplikacji.
+\item dostarcza ci interfejs służący tworzeniu obiektów z różnych klas danej rodziny produktów. O ile twój kod będzie kreował obiekty za pośrednictwem tego interfejsu — nie musisz się martwić stworzeniem produktu w niezgodnym z innymi wariancie.
+\end{itemize}
+\subsection{budowniczy (builder)}
+\label{sec:org5fbf925}
+\begin{itemize}
+\item \textbf{SKLADANIE OBIEKTU Z MALYCH CZESCI} np fabryka pizzy, konstruujesz ciasto, dodatki i sos
+\item gdy potrzebujesz możliwości tworzenia różnych reprezentacji jakiegoś produktu (na przykład, domy z kamienia i domy z drewna).
+\item Stosuj ten wzorzec do konstruowania drzew Kompozytowych lub innych złożonych obiektów.
+\item Stosuj wzorzec Budowniczy, aby pozbyć się “teleskopowych konstruktorów”.
+\end{itemize}
+\begin{verbatim}
+Pizza(int size) {  }
+Pizza(int size, boolean cheese) {  }
+Pizza(int size, boolean cheese, boolean pepperoni) {  }
+\end{verbatim}
+
+\subsubsection{problem}
+\label{sec:org28c2ec3}
+Wyobraź sobie jakiś skomplikowany obiekt, którego inicjalizacja jest pracochłonnym, wieloetapowym procesem obejmującym wiele pól i obiektów zagnieżdżonych. Taki kod inicjalizacyjny jest często wrzucany do wielgachnego konstruktora, przyjmującego mnóstwo parametrów. Albo jeszcze gorzej: kod taki rozrzucono po całym kodzie klienckim.
+\subsection{prototyp}
+\label{sec:orgd7d944d}
+\begin{itemize}
+\item który umożliwia kopiowanie już istniejących obiektów bez tworzenia zależności pomiędzy twoim kodem, a klasami obiektów.
+\item deleguje proces klonowania samym obiektom, które mają być sklonowane. We wzorcu tym deklarowany jest wspólny interfejs dla wszystkich obiektów wspierających funkcjonalność klonowania.
+\end{itemize}
+
+\section{wzorce behawioralne}
+\label{sec:orgb6f74c0}
+\subsection{Obserwator (observer)}
+\label{sec:org1eeafc9}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./obserwator.png}
+\end{center}
+\begin{itemize}
+\item okresla zaleznosc jeden do wiele miedzy obiektami
+\item gdy jeden obiekt zmienia stan wszystkie obiekty od niego zalezne sa o tym automatycznie powiadamiane i uaktualniane (np. w kalkulatorze mamy 3 klasy wypisywania ktore maja w sobie string do wypisywania, kiedy wprowadzamy nowe dzialanie wszyskie sa updatowane)
+\item wydaje mi sie ze realizowany w grach -> bo trzeba updatowac stan obiektow a one musza znac stan innych
+\item gdy zmiany stanu jednego obiektu mogą wymagać zmiany w innych obiektach, a konkretny zestaw obiektów nie jest zawczasu znany lub ulega zmianom dynamicznie
+\item gdy jakieś obiekty w twojej aplikacji muszą obserwować inne, ale tylko przez jakiś czas lub w niektórych przypadkach.
+\end{itemize}
+\subsubsection{kontekst}
+\label{sec:orgdaf6b5a}
+zmiana stanu jednego obiektu wymaga zmiany innych i nie wiadomo, ile obiektow trzeba zmienic
+\subsubsection{problem}
+\label{sec:orgc1d819e}
+obiekt powinien byc w stanie powiadamiac inne obiekty, nie przyjmujac zadnych zalozen co do tego, co te obiekty reprezentuja - wynikiem sa luzniejsze powiazania miedzy obiektami
+\subsubsection{implementacja}
+\label{sec:org7467447}
+\url{https://refactoring.guru/design-patterns/observer}
+zagwarantowanie ze przed rozeslaniem powiadomienia stan obserwowanergo jest wewnetrznie spojny
+
+
+model push (obserwowany wysyla wszystkie informacje same)
+model pull (obserwowany wysyla POWIADOMIENIE a kazdy inny pyta sie to czego potrzebuje z jakiejs zmiany)
+\subsection{Stan (state)}
+\label{sec:orgaed216a}
+\url{https://refactoring.guru/design-patterns/state}
+\begin{itemize}
+\item umozliwia obiektowi zmiane zachowania, gdy zmienia sie jego stan wewnetrzny (np. ktos zmienia typ konta bankowego)
+\item gdy masz do czynienia z obiektem którego zachowanie jest zależne od jego stanu, liczba możliwych stanów jest wielka, a kod specyficzny dla danego stanu często ulega zmianom.
+\item gdy masz klasę zaśmieconą rozbudowanymi instrukcjami warunkowymi zmieniającymi zachowanie klasy zależnie od wartości jej pól.
+\item pomaga poradzić sobie z dużą ilością kodu który się powtarza w wielu stanach i przejściach między stanami automatu skończonego, bazującego na instrukcjach warunkowych.
+\end{itemize}
+\subsubsection{kontekst}
+\label{sec:org82899f7}
+\begin{itemize}
+\item zachowanie obiektu zalezy od jego stanu, a obiekt ten musi zmieniac swoje zachowanie w czasie wykonywania programu w zaleznosci od stanu
+\item operacje zawieraja duze, wieloczesciowe instrukcje warunkowe ktore zaleza od stanu obiektu - wzorzec State przenosi kazde rozgalezienie do specjalnej klasy z inna implementacja np. pobierz podatek
+\end{itemize}
+\subsubsection{problem}
+\label{sec:orga0a0c13}
+chemy umozliwic obiektowi zmiane zachowania w momencie zmiany wewnetrzengo stanu obiektu hermetyzujac stan w postaci klasy
+\subsubsection{implementacja}
+\label{sec:org2bda666}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./stan.png}
+\end{center}
+\subsection{strategia (strategy)}
+\label{sec:org76855fc}
+\url{https://refactoring.guru/design-patterns/strategy}
+\begin{itemize}
+\item roznica w implementacji ze stanem
+\item w stanie klient nie widzi z kim dziala
+\item w strategi klient zna wewnetrzna strukture - wie kto uzywa
+\item pomaga poradzić sobie z dużą ilością kodu który się powtarza w wielu stanach i przejściach między stanami automatu skończonego, bazującego na instrukcjach warunkowych.
+\item gdy masz w programie wiele podobnych klas, różniących się jedynie sposobem wykonywania jakichś zadań.
+\item odizolować logikę biznesową klasy od szczegółów implementacyjnych algorytmów, które nie są istotne w kontekście tej logiki.
+\item gdy twoja klasa zawiera duży operator warunkowy, którego zadaniem jest wybór odpowiedniego wariantu tego samego algorytmu.
+\end{itemize}
 \subsection{iterator}
-\label{sec:org3baca9e}
+\label{sec:org16cea45}
 \begin{itemize}
 \item hermetyzacja iteracji
+\item gdy kolekcja z którą masz do czynienia posiada skomplikowaną strukturę, ale zależy ci na ukryciu jej przed klientem (dla wygody, lub dla bezpieczeństwa).
+\item w celu redukcji duplikowania kodu przeglądania elementów zbiorów na przestrzeni całego programu.
+\item gdy chcesz, aby twój kod był w stanie przeglądać elementy różnych struktur danych, lub gdy nie znasz z góry szczegółów ich struktury.
+\item abstrakcja dla skomplikowanych struktur danych np. drzewo lista
 \end{itemize}
 \begin{verbatim}
 Iterator iterator = menuCostam.utworzIterator();
@@ -70,60 +198,41 @@ while (iterator.hasNext())
 }
 \end{verbatim}
 
-\section{wzorce behawioralne}
-\label{sec:org5381483}
-\subsection{Obserwator}
-\label{sec:orgbd64461}
-\begin{center}
-\includegraphics[width=.9\linewidth]{./obserwator.png}
-\end{center}
-\begin{itemize}
-\item okresla zaleznosc jeden do wiele miedzy obiektami
-\item gdy jeden obiekt zmienia stan wszystkie obiekty od niego zalezne sa o tym automatycznie powiadamiane i uaktualniane (np. w kalkulatorze mamy 3 klasy wypisywania ktore maja w sobie string do wypisywania, kiedy wprowadzamy nowe dzialanie wszyskie sa updatowane)
-\item wydaje mi sie ze realizowany w grach -> bo trzeba updatowac stan obiektow a one musza znac stan innych
-\end{itemize}
-\subsubsection{kontekst}
-\label{sec:org14eb0e2}
-zmiana stanu jednego obiektu wymaga zmiany innych i nie wiadomo, ile obiektow trzeba zmienic
-\subsubsection{problem}
-\label{sec:org041c0c7}
-obiekt powinien byc w stanie powiadamiac inne obiekty, nie przyjmujac zadnych zalozen co do tego, co te obiekty reprezentuja - wynikiem sa luzniejsze powiazania miedzy obiektami
-\subsubsection{implementacja}
-\label{sec:orgaabf340}
-\url{https://refactoring.guru/design-patterns/observer}
-zagwarantowanie ze przed rozeslaniem powiadomienia stan obserwowanergo jest wewnetrznie spojny
+\subsection{mediator}
+\label{sec:org9df1e81}
+pozwalający zredukować chaos zależności pomiędzy obiektami. Wzorzec ten ogranicza bezpośrednią komunikację pomiędzy obiektami i zmusza je do współpracy wyłącznie za pośrednictwem obiektu mediatora
 
-
-model push (obserwowany wysyla wszystkie informacje same)
-model pull (obserwowany wysyla POWIADOMIENIE a kazdy inny pyta sie to czego potrzebuje z jakiejs zmiany)
-\subsection{Stan}
-\label{sec:org26a7210}
 \begin{itemize}
-\item umozliwia obiektowi zmiane zachowania, gdy zmienia sie jego stan wewnetrzny (np. ktos zmienia typ konta bankowego)
+\item pozwalający zredukować chaos zależności pomiędzy obiektami. Wzorzec ten ogranicza bezpośrednią komunikację pomiędzy obiektami i zmusza je do współpracy wyłącznie za pośrednictwem obiektu mediatora
+\item gdy nie możesz ponownie użyć jakiegoś komponentu w innym programie, z powodu zbytniej jego zależności od innych komponentow
 \end{itemize}
-\subsubsection{kontekst}
-\label{sec:org037bf63}
+gdy zauważysz, że tworzysz mnóstwo podklas komponentu tylko aby móc ponownie użyć jakieś zachowanie w innych kontekstach.
+\subsection{Metoda szablonowa (template method)}
+\label{sec:org2e3aa3c}
+\url{./template}
+definiujący szkielet algorytmu w klasie bazowej, ale pozwalający podklasom nadpisać pewne etapy tego algorytmu bez konieczności zmiany jego struktury.
 \begin{itemize}
-\item zachowanie obiektu zalezy od jego stanu, a obiekt ten musi zmieniac swoje zachowanie w czasie wykonywania programu w zaleznosci od stanu
-\item operacje zawieraja duze, wieloczesciowe instrukcje warunkowe ktore zaleza od stanu obiektu - wzorzec State przenosi kazde rozgalezienie do specjalnej klasy z inna implementacja np. pobierz podatek
+\item gdy chcesz pozwolić klientom na rozszerzanie niektórych tylko etapów algorytmu, ale nie całego, ani też jego struktury.
+\item gdy masz wiele klas zawierających niemal identyczne algorytmy różniące się jedynie szczegółami.  W takiej sytuacji bowiem konieczność modyfikacji algorytmu skutkuje koniecznością modyfikacji wszystkich klas.
 \end{itemize}
-\subsubsection{problem}
-\label{sec:org0787654}
-chemy umozliwic obiektowi zmiane zachowania w momencie zmiany wewnetrzengo stanu obiektu hermetyzujac stan w postaci klasy
-\subsubsection{implementacja}
-\label{sec:orgdbef42e}
-\begin{center}
-\includegraphics[width=.9\linewidth]{./stan.png}
-\end{center}
-\subsection{strategia}
-\label{sec:orgedad967}
+\subsection{Odwiedzajacy (visitor)}
+\label{sec:org34f4679}
 \begin{itemize}
-\item 
+\item gdy istnieje potrzeba wykonywania jakiegoś działania na wszystkich elementach złożonej struktury obiektów (jak drzewo obiektów).
+\item pozwala uprzątnąć logikę biznesową czynności pomocniczych.
+\item Warto stosować ten wzorzec gdy jakieś zachowanie ma sens tylko w kontekście niektórych klas wchodzących w skład hierarchii klas, ale nie wszystkich.
+\end{itemize}
+\subsection{polecenie}
+\label{sec:org540a76a}
+który zmienia żądanie w samodzielny obiekt zawierający wszystkie informacje o tym żądaniu. Taka transformacja pozwala na parametryzowanie metod przy użyciu różnych żądań. Oprócz tego umożliwia opóźnianie lub kolejkowanie wykonywania żądań oraz pozwala na cofanie operacji.
+\begin{itemize}
+\item gdy chcesz parametryzować obiekty za pomocą działań.
+\item pozwala układać kolejki zadań, ustalać harmonogram ich wykonania bądź uruchamiać je zdalnie.
 \end{itemize}
 \section{wzorce strukturalne}
-\label{sec:org13c94a5}
-\subsection{kompozyt}
-\label{sec:orgb84edc7}
+\label{sec:org3063d87}
+\subsection{kompozyt (composite)}
+\label{sec:orgb3ad3ec}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./kompozyt.png}
 \end{center}
@@ -131,13 +240,189 @@ TLDR: Drzewko w ktorym lisc zawiera siebie + liste dzieci
 
 \begin{itemize}
 \item zadaniem jest laczenie obiektow w struktura tak, ze reprezentuja hierarchie czesci-calosci, unifikujac dostep do kolekcji jak i pojedynczego obiektu.
-\item + umozliwa to klientom jednolite traktowanie pojedynczych obiektow i rowniez ich kompozycji
+\item umozliwa to klientom jednolite traktowanie pojedynczych obiektow i rowniez ich kompozycji
+\item Stosuj wzorzec Kompozyt gdy musisz zaimplementować drzewiastą strukturę obiektów.
+\item Stosuj ten wzorzec gdy chcesz, aby kod kliencki traktował zarówno proste, jak i złożone elementy jednakowo.
 \end{itemize}
 
 \subsubsection{kontekst}
-\label{sec:org927fe0d}
+\label{sec:orgcc43159}
 chcemy przedstawic hierarchie obiektow czesc-calosc Hierarchia obiektow ma wspolna klase bazowa (abstrakcyjną)
 \subsubsection{problem}
-\label{sec:org9375bc7}
+\label{sec:org2b1d66e}
 chcemy, aby klienci mogli ignorowac roznice miedzy zlozeniami obiektow a pojedynczymi obiektami - klienci beda wtedy jednakowo traktowac wszyskie obiekty wystepujace w strukturze
+\subsection{dekorator (decorator)}
+\label{sec:orgef0a9d2}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./dekorator.png}
+\end{center}
+
+pozwalający dodawać nowe obowiązki obiektom poprzez umieszczanie tych obiektów w specjalnych obiektach opakowujących, które zawierają odpowiednie zachowania.
+\begin{itemize}
+\item dodawanie dodatkowej funkcjonalnosci do obiektow
+\item gdy chcesz przypisywać dodatkowe obowiązki obiektom w trakcie działania programu, bez psucia kodu, który z tych obiektów korzysta.
+\item gdy rozszerzenie zakresu obowiązków obiektu za pomocą dziedziczenia byłoby niepraktyczne, lub niemożliwe.
+\end{itemize}
+\subsection{pelnomocnik (proxy)}
+\label{sec:org9089b3a}
+pozwalający stworzyć obiekt zastępczy w miejsce innego obiektu. Pełnomocnik nadzoruje dostęp do pierwotnego obiektu, pozwalając na wykonanie jakiejś czynności przed lub po przekazaniu do niego żądania
+\begin{itemize}
+\item Leniwa inicjalizacja (wirtualny pełnomocnik). Gdy masz do czynienia z zasobożernym obiektem usługi, którego potrzebujesz jedynie co jakiś czas.
+\item Kontrola dostępu (pełnomocnik ochronny). Przydatne, gdy chcesz pozwolić tylko niektórym klientom na korzystanie z obiektu usługi. Na przykład, gdy usługi stanowią kluczową część systemu operacyjnego, a klienci to różne uruchamiane aplikacje (również te szkodliwe).
+\item Lokalne uruchamianie zdalnej usługi (pełnomocnik zdalny). Użyteczne, gdy obiekt udostępniający usługę znajduje się na zdalnym serwerze.
+\item Prowadzenie dziennika żądań (pełnomocnik prowadzący dziennik). Pozwala prowadzić rejestr żądań przesyłanych do obiektu usługi.
+\item Przechowywanie w pamięci podręcznej wyników działań (pełnomocnik z pamięcią podręczną). Pozwala przechować wyniki przekazywanych żądań i zarządzać cyklem życia pamięci podręcznej. Szczególnie ważne przy dużych wielkościach danych wynikowych.
+\item Sprytne referencje. Można likwidować zasobożerny obiekt, gdy nie ma klientów którzy go potrzebują.
+\end{itemize}
+\subsection{fasada (facade)}
+\label{sec:orgd802e61}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./facade.png}
+\end{center}
+który wyposaża bibliotekę, framework lub inny złożony zestaw klas w uproszczony interfejs.
+\begin{itemize}
+\item taki wrapper na wiele rzeczy
+\item gdy potrzebujesz ograniczonego, ale łatwego w użyciu interfejsu do złożonego podsystemu.
+\item gdy chcesz ustrukturyzować podsystem w warstwy.
+\end{itemize}
+
+\subsection{most (bridge)}
+\label{sec:org037a8c5}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./bridge.png}
+\end{center}
+pozwalającym na rozdzielenie dużej klasy lub zestawu spokrewnionych klas na dwie hierarchie — abstrakcję oraz implementację. Nad obiema można wówczas pracować niezależnie.
+\begin{itemize}
+\item gdy chcesz rozdzielić i przeorganizować monolityczną klasę posiadającą wiele wariantów takiej samej funkcjonalności (na przykład, jeśli klasa ma współpracować z wieloma serwerami bazodanowymi).
+\item gdy chcesz rozszerzyć klasę na kilku niezależnych płaszczyznach.
+\item pozwala spełnić wymóg możliwości wyboru implementacji w trakcie działania programu.
+\end{itemize}
+\subsection{adapter}
+\label{sec:org917a561}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./adapter.png}
+\end{center}
+pozwalającym na współdziałanie ze sobą obiektów o niekompatybilnych interfejsach.
+\begin{itemize}
+\item gdy chcesz wykorzystać jakąś istniejącą klasę, ale jej interfejs nie jest kompatybilny z resztą twojego programu.
+\item gdy chcesz wykorzystać ponownie wiele istniejących podklas którym brakuje jakiejś wspólnej funkcjonalności, niedającej się dodać do ich nadklasy.
+\end{itemize}
+\subsection{pylek (cache, flyweight)}
+\label{sec:org25d68cd}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./cache.png}
+\end{center}
+pozwalającym zmieścić więcej obiektów w danej przestrzeni pamięci RAM poprzez współdzielenie części opisu ich stanów.
+\begin{itemize}
+\item gdy twój program musi pracować z wielką ilością obiektów, które ledwo mieszczą się w dostępnej pamięci RAM.
+\end{itemize}
+\section{pytania zamkniete}
+\label{sec:org2309653}
+\subsection{zaznacz glownie rodzaje procesow biznesowych}
+\label{sec:org11960d7}
+procesy operacyjne, zarzadzcze i pomocnicze
+\subsection{stosujac wzorzec <BLANK> gdy nie wiesz z gory jakie typy obiektow pojawiaja sie jakie twoim programie miedzy nimi zaleznosci}
+\label{sec:orgb6da1bd}
+\textbf{factory method}
+\subsection{stosujac wzorzec <BLANK> gdy istnieje potrzeba wykonywanie jakiego dzialania na elementach zlozonej strukty obiektow (jak drzewo obiektow)}
+\label{sec:org2104cc7}
+iterator
+\subsection{stosuj wzorzec <BLANK> gdy musisz zaimplementowac drzewiasta strukture obiektow}
+\label{sec:orgabe1f10}
+\textbf{composite}
+\subsection{korzystajac z wzorcza <BLANK> gdy chcesz oszczedniej wykorzystac zasoby systemowe poprzez ponownie wykorzystanie juz istniejacych obiektow zamiast odbudowywyac je raz za razem}
+\label{sec:org089fa50}
+\textbf{factory method}
+\subsection{stosuj wzorczec <BLANK> gdy chcesz przyjmowac dodatkow dodatkowe obowiazki obiektom w trajcie dziala programu, bez pisania \ldots{} ktory z tych obiektow korzysta}
+\label{sec:orgc9e531f}
+\textbf{DEKORATOR} 
+\subsection{stosowanie wzorcza <BLANK> pozwala uprzatnac logike biznesowa czynnosci pomocniczych}
+\label{sec:org0ae9da6}
+\textbf{visitor}
+\subsection{<BLANK> pozwala odizolowac logike biznesowa klasy od szczegolow implementacyjnych algorytmow, ktore nie sa istotne w kontekscie tej logiki}
+\label{sec:orga7a0e10}
+\textbf{strategy} 
+\subsection{stosuj wzorzec <BLANK> gdy chcesz aby kod klienci traktowal zarowno proste, jak i zlozone elementy jednakowo}
+\label{sec:orgc1f6f13}
+\textbf{composite}
+\subsection{stosuj wzorzec <BLANK> gdy istnieje potrzeba wykonania jakiegos na dzialania na wszystkich elementacj zlozonej struktury obiektow (jak drzewo obiektow)}
+\label{sec:org1d8556e}
+\textbf{vistor}
+\subsection{korzystaj z wzorcza <BLANK> gdy zamierzasz pozwolic uzytkujacym twa biblioteke lub framework rozbudowywac jej wewnetrzne komponenty}
+\label{sec:orge5244e1}
+\textbf{factory method}
+
+\subsection{ktore stwierdzenia sa prawdziwy, gdy aktor A uogulnia aktora B}
+\label{sec:org4683b30}
+\begin{itemize}
+\item B moze komunikowac sie z tymi samymi przypadkami uzycia co A
+\item B dziedziczy wszystkie zwiazki A
+\end{itemize}
+\subsection{ktore z ponizszych stwierdzen charaktyryzuja przypadki uzycia}
+\label{sec:orgb0f029b}
+\begin{itemize}
+\item przypadki uzycia posuja procedyury stosowane w systemie
+\item ???przypadki uzycia posuja funkcjonalnosc lub zachowanie oczekiwane od opracowanego systemu???
+\end{itemize}
+\subsection{wybierz zdania prawdziwe okreslajace pojecie \textbf{bledu logicznego} w oprogramowaniu}
+\label{sec:org80ad2fe}
+\begin{itemize}
+\item wiekszosc wysilkow, podzas testowania programu, koncentruje sie na ich znajdowaniu
+\item blad  logiczny powstaje, gdy zewnetrzne zdarzenie lub nie wykryt blad skladni zmusza proces do zatrzymania swojego dzialania
+\end{itemize}
+\subsection{Proces określania wymagań dla systemu informatycznego można podzielić na następujące fazy}
+\label{sec:org92f52fb}
+\begin{itemize}
+\item Faza ustalania wymagań
+\item Faza specyfikacji wymagań
+\item Faza atestacji wymagań
+\end{itemize}
+\subsection{Kontekst systemu}
+\label{sec:orgddbbada}
+\begin{itemize}
+\item Jest częścią środowiska systemu, która jest istotna ze względu na definiowanie i zrozumienie wymagań dla tworzonego systemu.
+\item Odseparowania kontekstu systemu od samego systemu oraz części rzeczywistości, która jest nieistotna dla tworzonego systemu. Definiowanie granic systemu polega na podjęciu decyzji, które aspekty będą implementowane w systemie, a które należą tylko do jego kontekstu.
+\end{itemize}
+\subsection{Zaznacz główne rodzaje procesów biznesowych}
+\label{sec:orgd7cb4bb}
+\begin{itemize}
+\item Procesy operacyjne
+\item Procesy zarządzania
+\item Procesy pomocnicze
+\end{itemize}
+\subsection{Strukturalne wzorce projektowe to}
+\label{sec:orgbd7dc12}
+\begin{itemize}
+\item Adapter
+\item Most
+\item Kompozyt
+\item Dekorator
+\item Fasada
+\item Pyłek
+\item Pełnomocnik
+\end{itemize}
+\subsection{Wybierz zdania prawdziwie określające pojęcie złożoności cyklometrycznej}
+\label{sec:org3ed8919}
+\begin{itemize}
+\item Złożoność cyklometryczna jest to liczba niezależnych ścieżek w programie
+\item Złożoność cyklometryczna jest podstawową miarą złożoności dowolnego fragmentu kodu programu
+\end{itemize}
+\subsection{Które z poniższych stwierdzeń charakteryzuje przypadki użycia}
+\label{sec:org4f4701e}
+\begin{itemize}
+\item Przypadki użycia opisują procedury stosowane w systemie
+\item Przypadki użycia opisują opisują funkcjonalność lub zachowanie oczekiwane od opracowywanego systemu
+\end{itemize}
+\section{pytania otwarte odpowiedz}
+\label{sec:orge57071b}
+\subsection{kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki}
+\label{sec:org7eebc85}
+\subsection{opisac silna agregacja}
+\label{sec:org789e40e}
+\section{pytania otwarte modelio}
+\label{sec:org6a38843}
+\subsection{system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety}
+\label{sec:orgdea096c}
+\subsection{zamodeluj podsystem obslugi klienta w sklepie internetowych Zacznij od opisu wymagan i procesow}
+\label{sec:org567ff5e}
 \end{document}
