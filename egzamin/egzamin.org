@@ -125,6 +125,10 @@ definiujący szkielet algorytmu w klasie bazowej, ale pozwalający podklasom nad
 + gdy istnieje potrzeba wykonywania jakiegoś działania na wszystkich elementach złożonej struktury obiektów (jak drzewo obiektów).
 + pozwala uprzątnąć logikę biznesową czynności pomocniczych.
 + Warto stosować ten wzorzec gdy jakieś zachowanie ma sens tylko w kontekście niektórych klas wchodzących w skład hierarchii klas, ale nie wszystkich.
+** polecenie
+ który zmienia żądanie w samodzielny obiekt zawierający wszystkie informacje o tym żądaniu. Taka transformacja pozwala na parametryzowanie metod przy użyciu różnych żądań. Oprócz tego umożliwia opóźnianie lub kolejkowanie wykonywania żądań oraz pozwala na cofanie operacji.
++ gdy chcesz parametryzować obiekty za pomocą działań.
++ pozwala układać kolejki zadań, ustalać harmonogram ich wykonania bądź uruchamiać je zdalnie.
 * wzorce strukturalne
 ** kompozyt (composite)
 [[./kompozyt.png]]
@@ -144,16 +148,39 @@ chcemy, aby klienci mogli ignorowac roznice miedzy zlozeniami obiektow a pojedyn
 
 pozwalający dodawać nowe obowiązki obiektom poprzez umieszczanie tych obiektów w specjalnych obiektach opakowujących, które zawierają odpowiednie zachowania.
 + dodawanie dodatkowej funkcjonalnosci do obiektow
-
++ gdy chcesz przypisywać dodatkowe obowiązki obiektom w trakcie działania programu, bez psucia kodu, który z tych obiektów korzysta.
++ gdy rozszerzenie zakresu obowiązków obiektu za pomocą dziedziczenia byłoby niepraktyczne, lub niemożliwe.
 ** pelnomocnik (proxy)
-as
+pozwalający stworzyć obiekt zastępczy w miejsce innego obiektu. Pełnomocnik nadzoruje dostęp do pierwotnego obiektu, pozwalając na wykonanie jakiejś czynności przed lub po przekazaniu do niego żądania
++ Leniwa inicjalizacja (wirtualny pełnomocnik). Gdy masz do czynienia z zasobożernym obiektem usługi, którego potrzebujesz jedynie co jakiś czas.
++ Kontrola dostępu (pełnomocnik ochronny). Przydatne, gdy chcesz pozwolić tylko niektórym klientom na korzystanie z obiektu usługi. Na przykład, gdy usługi stanowią kluczową część systemu operacyjnego, a klienci to różne uruchamiane aplikacje (również te szkodliwe).
++ Lokalne uruchamianie zdalnej usługi (pełnomocnik zdalny). Użyteczne, gdy obiekt udostępniający usługę znajduje się na zdalnym serwerze.
++ Prowadzenie dziennika żądań (pełnomocnik prowadzący dziennik). Pozwala prowadzić rejestr żądań przesyłanych do obiektu usługi.
++ Przechowywanie w pamięci podręcznej wyników działań (pełnomocnik z pamięcią podręczną). Pozwala przechować wyniki przekazywanych żądań i zarządzać cyklem życia pamięci podręcznej. Szczególnie ważne przy dużych wielkościach danych wynikowych.
++ Sprytne referencje. Można likwidować zasobożerny obiekt, gdy nie ma klientów którzy go potrzebują.
 ** fasada (facade)
-as
+[[./facade.png]]
+który wyposaża bibliotekę, framework lub inny złożony zestaw klas w uproszczony interfejs.
++ taki wrapper na wiele rzeczy
++ gdy potrzebujesz ograniczonego, ale łatwego w użyciu interfejsu do złożonego podsystemu.
++ gdy chcesz ustrukturyzować podsystem w warstwy.
+
 ** most (bridge)
-as
+[[./bridge.png]]
+pozwalającym na rozdzielenie dużej klasy lub zestawu spokrewnionych klas na dwie hierarchie — abstrakcję oraz implementację. Nad obiema można wówczas pracować niezależnie.
++ gdy chcesz rozdzielić i przeorganizować monolityczną klasę posiadającą wiele wariantów takiej samej funkcjonalności (na przykład, jeśli klasa ma współpracować z wieloma serwerami bazodanowymi).
++ gdy chcesz rozszerzyć klasę na kilku niezależnych płaszczyznach.
++ pozwala spełnić wymóg możliwości wyboru implementacji w trakcie działania programu.
 ** adapter
-as
-* pytania
+[[./adapter.png]]
+pozwalającym na współdziałanie ze sobą obiektów o niekompatybilnych interfejsach.
++ gdy chcesz wykorzystać jakąś istniejącą klasę, ale jej interfejs nie jest kompatybilny z resztą twojego programu.
++ gdy chcesz wykorzystać ponownie wiele istniejących podklas którym brakuje jakiejś wspólnej funkcjonalności, niedającej się dodać do ich nadklasy.
+** pylek (cache, flyweight)
+[[./cache.png]]
+pozwalającym zmieścić więcej obiektów w danej przestrzeni pamięci RAM poprzez współdzielenie części opisu ich stanów.
++ gdy twój program musi pracować z wielką ilością obiektów, które ledwo mieszczą się w dostępnej pamięci RAM.
+* pytania zamkniete
 ** zaznacz glownie rodzaje procesow biznesowych
  procesy operacyjne, zarzadzcze i pomocnicze
 ** stosujac wzorzec <BLANK> gdy nie wiesz z gory jakie typy obiektow pojawiaja sie jakie twoim programie miedzy nimi zaleznosci
@@ -162,7 +189,6 @@ as
 iterator
 ** stosuj wzorzec <BLANK> gdy musisz zaimplementowac drzewiasta strukture obiektow
 *composite*
-** kontekst systemu
 ** korzystajac z wzorcza <BLANK> gdy chcesz oszczedniej wykorzystac zasoby systemowe poprzez ponownie wykorzystanie juz istniejacych obiektow zamiast odbudowywyac je raz za razem
 *factory method*
 ** stosuj wzorczec <BLANK> gdy chcesz przyjmowac dodatkow dodatkowe obowiazki obiektom w trajcie dziala programu, bez pisania ... ktory z tych obiektow korzysta
@@ -178,8 +204,43 @@ iterator
 ** korzystaj z wzorcza <BLANK> gdy zamierzasz pozwolic uzytkujacym twa biblioteke lub framework rozbudowywac jej wewnetrzne komponenty
 *factory method*
 
-* otwarte odpowiedz
-* otwarte modelio
+** ktore stwierdzenia sa prawdziwy, gdy aktor A uogulnia aktora B
+B moze komunikowac sie z tymi samymi przypadkami uzycia co A
+B dziedziczy wszystkie zwiazki A
+** ktore z ponizszych stwierdzen charaktyryzuja przypadki uzycia
+przypadki uzycia posuja procedyury stosowane w systemie
+???przypadki uzycia posuja funkcjonalnosc lub zachowanie oczekiwane od opracowanego systemu???
+** wybierz zdania prawdziwe okreslajace pojecie *bledu logicznego* w oprogramowaniu
++ wiekszosc wysilkow, podzas testowania programu, koncentruje sie na ich znajdowaniu
++ blad  logiczny powstaje, gdy zewnetrzne zdarzenie lub nie wykryt blad skladni zmusza proces do zatrzymania swojego dzialania
+** Proces określania wymagań dla systemu informatycznego można podzielić na następujące fazy
++ Faza ustalania wymagań
++ Faza specyfikacji wymagań
++ Faza atestacji wymagań
+** Kontekst systemu
++ Jest częścią środowiska systemu, która jest istotna ze względu na definiowanie i zrozumienie wymagań dla tworzonego systemu.
++ Odseparowania kontekstu systemu od samego systemu oraz części rzeczywistości, która jest nieistotna dla tworzonego systemu. Definiowanie granic systemu polega na podjęciu decyzji, które aspekty będą implementowane w systemie, a które należą tylko do jego kontekstu.
+** Zaznacz główne rodzaje procesów biznesowych
++ Procesy operacyjne
++ Procesy zarządzania
++ Procesy pomocnicze
+** Strukturalne wzorce projektowe to 
++ Adapter
++ Most
++ Kompozyt
++ Dekorator
++ Fasada
++ Pyłek
++ Pełnomocnik
+* pytania otwarte odpowiedz
+
+* pytania otwarte modelio
+** system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety
 
 
 
+
+
+
+
+ZW DO 17:20
