@@ -76,10 +76,10 @@ public final class OperatorManager
 		public void printPostfix(Node root)
 			{
 				if (root.size() > 1) // right
-					printPostfix(root.get(1));
+					printPrefix(root.get(1));
 
 				if (root.size() > 0) // left
-					printPostfix(root.get(0));
+					printPrefix(root.get(0));
 
 				System.out.print(root.getValue());
 				System.out.print(" ");

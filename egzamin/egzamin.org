@@ -1,5 +1,12 @@
+[[./zwiazki_UML.png]]
+
+* BMPN
+** zdarzenia
+[[./zdarzenia.png]]
+
 * wzorce kreacyjne
 ** singleton
+https://refactoring.guru/design-patterns/singleton
 [[./singleton.png]]
 + zagwaratowac ze jest jeden obiekt tego typu (np. konfiguracja/stan globalny)
 *** implementacja
@@ -10,19 +17,52 @@ class singleton {
 private static singleton; //nasz obiekt
 public static singleton getSingleton() //statyczna publiczna funkcja do otrzymywania tego stanu
 {
+	if(instancja==null)
+		instancja = new Singleton();
+
 	return singleton;
 }
-
 };
 
 #+end_src
+** metoda wytworcza (factory method)
+[[./factory.png]]
++ udostępnia interfejs do tworzenia obiektów w ramach klasy bazowej, ale pozwala podklasom zmieniać typ tworzonych obiektów.
++ Stosuj Metodę Wytwórczą gdy nie wiesz z góry jakie typy obiektów pojawią się w twoim programie i jakie będą między nimi zależności.
++ Metody Wytwórczej gdy zamierzasz pozwolić użytkującym twą bibliotekę lub framework rozbudowywać jej wewnętrzne komponenty.
++ gdy chcesz oszczędniej wykorzystać zasoby systemowe poprzez ponowne wykorzystanie już istniejących obiektów, zamiast odbudowywać je raz za razem.
+
+Metoda Wytwórcza oddziela kod konstruujący produkty od kodu który faktycznie z tych produktów korzysta. Dlatego też łatwiej jest rozszerzać kod konstruujący produkty bez konieczności ingerencji w resztę kodu.
+** fabryka abstrakcyjna (abstract factory)
+[[./abstractfactory.png]]
++ który pozwala tworzyć rodziny spokrewnionych ze sobą obiektów bez określania ich konkretnych klas.
++ gdy twój kod ma działać na produktach z różnych rodzin, ale jednocześnie nie chcesz, aby ściśle zależał od konkretnych klas produktów. Mogą one bowiem być nieznane na wcześniejszym etapie tworzenia programu, albo chcesz umożliwić przyszłą rozszerzalność aplikacji.
++ dostarcza ci interfejs służący tworzeniu obiektów z różnych klas danej rodziny produktów. O ile twój kod będzie kreował obiekty za pośrednictwem tego interfejsu — nie musisz się martwić stworzeniem produktu w niezgodnym z innymi wariancie.
+** budowniczy (builder)
++ *SKLADANIE OBIEKTU Z MALYCH CZESCI* np fabryka pizzy, konstruujesz ciasto, dodatki i sos
++ gdy potrzebujesz możliwości tworzenia różnych reprezentacji jakiegoś produktu (na przykład, domy z kamienia i domy z drewna).
++ Stosuj ten wzorzec do konstruowania drzew Kompozytowych lub innych złożonych obiektów.
++ Stosuj wzorzec Budowniczy, aby pozbyć się “teleskopowych konstruktorów”.
+#+begin_src java
+Pizza(int size) {  }
+Pizza(int size, boolean cheese) {  }
+Pizza(int size, boolean cheese, boolean pepperoni) {  }
+#+end_src
+
+*** problem
+Wyobraź sobie jakiś skomplikowany obiekt, którego inicjalizacja jest pracochłonnym, wieloetapowym procesem obejmującym wiele pól i obiektów zagnieżdżonych. Taki kod inicjalizacyjny jest często wrzucany do wielgachnego konstruktora, przyjmującego mnóstwo parametrów. Albo jeszcze gorzej: kod taki rozrzucono po całym kodzie klienckim.
+** prototyp
++ który umożliwia kopiowanie już istniejących obiektów bez tworzenia zależności pomiędzy twoim kodem, a klasami obiektów.
++ deleguje proces klonowania samym obiektom, które mają być sklonowane. We wzorcu tym deklarowany jest wspólny interfejs dla wszystkich obiektów wspierających funkcjonalność klonowania.
 
 * wzorce behawioralne 
-** Obserwator
+** Obserwator (observer)
 [[./obserwator.png]]
 + okresla zaleznosc jeden do wiele miedzy obiektami
 + gdy jeden obiekt zmienia stan wszystkie obiekty od niego zalezne sa o tym automatycznie powiadamiane i uaktualniane (np. w kalkulatorze mamy 3 klasy wypisywania ktore maja w sobie string do wypisywania, kiedy wprowadzamy nowe dzialanie wszyskie sa updatowane)
 + wydaje mi sie ze realizowany w grach -> bo trzeba updatowac stan obiektow a one musza znac stan innych
++ gdy zmiany stanu jednego obiektu mogą wymagać zmiany w innych obiektach, a konkretny zestaw obiektów nie jest zawczasu znany lub ulega zmianom dynamicznie
++ gdy jakieś obiekty w twojej aplikacji muszą obserwować inne, ale tylko przez jakiś czas lub w niektórych przypadkach.
 *** kontekst
 zmiana stanu jednego obiektu wymaga zmiany innych i nie wiadomo, ile obiektow trzeba zmienic
 *** problem
@@ -34,8 +74,12 @@ zagwarantowanie ze przed rozeslaniem powiadomienia stan obserwowanergo jest wewn
 
 model push (obserwowany wysyla wszystkie informacje same)
 model pull (obserwowany wysyla POWIADOMIENIE a kazdy inny pyta sie to czego potrzebuje z jakiejs zmiany)
-** Stan
+** Stan (state)
+https://refactoring.guru/design-patterns/state
 + umozliwia obiektowi zmiane zachowania, gdy zmienia sie jego stan wewnetrzny (np. ktos zmienia typ konta bankowego)
++ gdy masz do czynienia z obiektem którego zachowanie jest zależne od jego stanu, liczba możliwych stanów jest wielka, a kod specyficzny dla danego stanu często ulega zmianom.
++ gdy masz klasę zaśmieconą rozbudowanymi instrukcjami warunkowymi zmieniającymi zachowanie klasy zależnie od wartości jej pól.
++ pomaga poradzić sobie z dużą ilością kodu który się powtarza w wielu stanach i przejściach między stanami automatu skończonego, bazującego na instrukcjach warunkowych.
 *** kontekst
 + zachowanie obiektu zalezy od jego stanu, a obiekt ten musi zmieniac swoje zachowanie w czasie wykonywania programu w zaleznosci od stanu
 + operacje zawieraja duze, wieloczesciowe instrukcje warunkowe ktore zaleza od stanu obiektu - wzorzec State przenosi kazde rozgalezienie do specjalnej klasy z inna implementacja np. pobierz podatek
@@ -43,15 +87,99 @@ model pull (obserwowany wysyla POWIADOMIENIE a kazdy inny pyta sie to czego potr
 chemy umozliwic obiektowi zmiane zachowania w momencie zmiany wewnetrzengo stanu obiektu hermetyzujac stan w postaci klasy
 *** implementacja
 [[./stan.png]]
+** strategia (strategy)
+https://refactoring.guru/design-patterns/strategy
++ roznica w implementacji ze stanem
++ w stanie klient nie widzi z kim dziala
++ w strategi klient zna wewnetrzna strukture - wie kto uzywa
++ pomaga poradzić sobie z dużą ilością kodu który się powtarza w wielu stanach i przejściach między stanami automatu skończonego, bazującego na instrukcjach warunkowych.
++ gdy masz w programie wiele podobnych klas, różniących się jedynie sposobem wykonywania jakichś zadań.
++ odizolować logikę biznesową klasy od szczegółów implementacyjnych algorytmów, które nie są istotne w kontekście tej logiki.
++ gdy twoja klasa zawiera duży operator warunkowy, którego zadaniem jest wybór odpowiedniego wariantu tego samego algorytmu.
+** iterator
++ hermetyzacja iteracji
++ gdy kolekcja z którą masz do czynienia posiada skomplikowaną strukturę, ale zależy ci na ukryciu jej przed klientem (dla wygody, lub dla bezpieczeństwa).
++ w celu redukcji duplikowania kodu przeglądania elementów zbiorów na przestrzeni całego programu.
++ gdy chcesz, aby twój kod był w stanie przeglądać elementy różnych struktur danych, lub gdy nie znasz z góry szczegółów ich struktury.
++ abstrakcja dla skomplikowanych struktur danych np. drzewo lista
+#+begin_src java
+Iterator iterator = menuCostam.utworzIterator();
+while (iterator.hasNext())
+{
+ pozycjaMenu pozycja = iterator.next();
+}
+#+end_src
+
+** mediator
+pozwalający zredukować chaos zależności pomiędzy obiektami. Wzorzec ten ogranicza bezpośrednią komunikację pomiędzy obiektami i zmusza je do współpracy wyłącznie za pośrednictwem obiektu mediatora
+
++ pozwalający zredukować chaos zależności pomiędzy obiektami. Wzorzec ten ogranicza bezpośrednią komunikację pomiędzy obiektami i zmusza je do współpracy wyłącznie za pośrednictwem obiektu mediatora
++ gdy nie możesz ponownie użyć jakiegoś komponentu w innym programie, z powodu zbytniej jego zależności od innych komponentow
+gdy zauważysz, że tworzysz mnóstwo podklas komponentu tylko aby móc ponownie użyć jakieś zachowanie w innych kontekstach.
+** Metoda szablonowa (template method)
+[[./template]]
+definiujący szkielet algorytmu w klasie bazowej, ale pozwalający podklasom nadpisać pewne etapy tego algorytmu bez konieczności zmiany jego struktury.
++ gdy chcesz pozwolić klientom na rozszerzanie niektórych tylko etapów algorytmu, ale nie całego, ani też jego struktury.
++ gdy masz wiele klas zawierających niemal identyczne algorytmy różniące się jedynie szczegółami.  W takiej sytuacji bowiem konieczność modyfikacji algorytmu skutkuje koniecznością modyfikacji wszystkich klas.
+** Odwiedzajacy (visitor)
++ gdy istnieje potrzeba wykonywania jakiegoś działania na wszystkich elementach złożonej struktury obiektów (jak drzewo obiektów).
++ pozwala uprzątnąć logikę biznesową czynności pomocniczych.
++ Warto stosować ten wzorzec gdy jakieś zachowanie ma sens tylko w kontekście niektórych klas wchodzących w skład hierarchii klas, ale nie wszystkich.
 * wzorce strukturalne
-** kompozyt
+** kompozyt (composite)
 [[./kompozyt.png]]
 TLDR: Drzewko w ktorym lisc zawiera siebie + liste dzieci
 
 + zadaniem jest laczenie obiektow w struktura tak, ze reprezentuja hierarchie czesci-calosci, unifikujac dostep do kolekcji jak i pojedynczego obiektu.
-+ + umozliwa to klientom jednolite traktowanie pojedynczych obiektow i rowniez ich kompozycji
++  umozliwa to klientom jednolite traktowanie pojedynczych obiektow i rowniez ich kompozycji
++ Stosuj wzorzec Kompozyt gdy musisz zaimplementować drzewiastą strukturę obiektów.
++ Stosuj ten wzorzec gdy chcesz, aby kod kliencki traktował zarówno proste, jak i złożone elementy jednakowo.
 
 *** kontekst
 chcemy przedstawic hierarchie obiektow czesc-calosc Hierarchia obiektow ma wspolna klase bazowa (abstrakcyjną)
 *** problem
 chcemy, aby klienci mogli ignorowac roznice miedzy zlozeniami obiektow a pojedynczymi obiektami - klienci beda wtedy jednakowo traktowac wszyskie obiekty wystepujace w strukturze
+** dekorator (decorator)
+[[./dekorator.png]]
+
+pozwalający dodawać nowe obowiązki obiektom poprzez umieszczanie tych obiektów w specjalnych obiektach opakowujących, które zawierają odpowiednie zachowania.
++ dodawanie dodatkowej funkcjonalnosci do obiektow
+
+** pelnomocnik (proxy)
+as
+** fasada (facade)
+as
+** most (bridge)
+as
+** adapter
+as
+* pytania
+** zaznacz glownie rodzaje procesow biznesowych
+ procesy operacyjne, zarzadzcze i pomocnicze
+** stosujac wzorzec <BLANK> gdy nie wiesz z gory jakie typy obiektow pojawiaja sie jakie twoim programie miedzy nimi zaleznosci
+*factory method*
+** stosujac wzorzec <BLANK> gdy istnieje potrzeba wykonywanie jakiego dzialania na elementach zlozonej strukty obiektow (jak drzewo obiektow)
+iterator
+** stosuj wzorzec <BLANK> gdy musisz zaimplementowac drzewiasta strukture obiektow
+*composite*
+** kontekst systemu
+** korzystajac z wzorcza <BLANK> gdy chcesz oszczedniej wykorzystac zasoby systemowe poprzez ponownie wykorzystanie juz istniejacych obiektow zamiast odbudowywyac je raz za razem
+*factory method*
+** stosuj wzorczec <BLANK> gdy chcesz przyjmowac dodatkow dodatkowe obowiazki obiektom w trajcie dziala programu, bez pisania ... ktory z tych obiektow korzysta
+*DEKORATOR* 
+** stosowanie wzorcza <BLANK> pozwala uprzatnac logike biznesowa czynnosci pomocniczych
+*visitor*
+** <BLANK> pozwala odizolowac logike biznesowa klasy od szczegolow implementacyjnych algorytmow, ktore nie sa istotne w kontekscie tej logiki
+*strategy* 
+** stosuj wzorzec <BLANK> gdy chcesz aby kod klienci traktowal zarowno proste, jak i zlozone elementy jednakowo
+*composite*
+** stosuj wzorzec <BLANK> gdy istnieje potrzeba wykonania jakiegos na dzialania na wszystkich elementacj zlozonej struktury obiektow (jak drzewo obiektow)
+*vistor*
+** korzystaj z wzorcza <BLANK> gdy zamierzasz pozwolic uzytkujacym twa biblioteke lub framework rozbudowywac jej wewnetrzne komponenty
+*factory method*
+
+* otwarte odpowiedz
+* otwarte modelio
+
+
+
