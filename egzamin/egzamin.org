@@ -1,3 +1,6 @@
+
+#+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+
 * UML
 [[./zwiazki_UML.png]]
 
