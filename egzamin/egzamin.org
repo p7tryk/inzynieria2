@@ -12,11 +12,12 @@ Funkcje które używają wskaźników lub referencji do klas bazowych, muszą by
 + to zalatwia jezyk programowania
 ** interface segregation
 Wiele dedykowanych interfejsów jest lepsze niż jeden ogólny.
++ w praktyce po to zeby unikac funkcjonalnosc ktory jest implementowana w interfejsie a dla konkretnej implementacji daje wartosc ktora jest nie potrzebna (ta podklasa jej nie powinna nigdy uzywac) 
 ** dependency inversion
 Wysokopoziomowe moduły nie powinny zależeć od modułów niskopoziomowych - zależności między nimi powinny wynikać z abstrakcji.
 
 * UML
-** diagram klas
+** diagram klas (class)
 [[./zwiazki_UML.png]]
 [[./uml.png]]
 *** asocjacja
@@ -29,8 +30,27 @@ Wysokopoziomowe moduły nie powinny zależeć od modułów niskopoziomowych - za
 przy kompozycji jezeli niszczymy rodzica to dziecko tez ginie
 *** dziedziczenie (generalizacja) is-a
 *** implementacja (do intefejsow/abstract)
-** diagram sekwencji
-** diagram przypadkow uzycia
+** diagram sekwencji (sequence)
+czas od gory do dolu 
+** diagram przypadkow uzycia (use case)
+Graficzne przedstawienie przypadków użycia, aktorów oraz związków między nimi, występujących w danej dziedzinie przedmiotowej.
+
+Diagram przypadków użycia w języku UML służy do modelowania funkcjonalności systemu. Tworzony jest zazwyczaj w początkowych fazach modelowania.
+
+Diagram ten stanowi tylko przegląd możliwych działań w systemie, szczegóły ich przebiegu są modelowane za pomocą innych technik
+
+Diagram przypadków użycia przedstawia usługi, które system świadczy aktorom, lecz bez wskazywania konkretnych rozwiązań technicznych.
+
+
++ identyfikacja oraz dokumentacja wymagań,
++ umożliwiają analizę obszaru zastosowań, dziedziny przedmiotowej,
++ pozwalają na opracowanie projektu przyszłego systemu,
++ stanowią przystępną i zrozumiałą platformę współpracy i komunikacji twórców systemu, inwestorów i właścicieli,
++ są rodzajem umowy, kontraktu pomiędzy udziałowcami co do zakresu i funkcjonalności przyszłego systemu,
++ stanowią podstawę testowania funkcji systemu na dalszych etapach jego cyklu życia.
+
+*** asocjacja skierowana
+Asocjacja skierowana (ang. directed association) – asocjacja skierowana dziedziczy wszystkie cechy po asocjacji, lecz dodatkowo wskazuje kierunek nawigacji. Używana kiedy chcemy ukazać inicjatora interakcji (np. Aktor "Klient" jest inicjatorem przypadku użycia "Kup produkt").
 * BPMN
 ** zdarzenia
 [[./zdarzenia.png]]
@@ -162,7 +182,7 @@ definiujący szkielet algorytmu w klasie bazowej, ale pozwalający podklasom nad
 + gdy istnieje potrzeba wykonywania jakiegoś działania na wszystkich elementach złożonej struktury obiektów (jak drzewo obiektów).
 + pozwala uprzątnąć logikę biznesową czynności pomocniczych.
 + Warto stosować ten wzorzec gdy jakieś zachowanie ma sens tylko w kontekście niektórych klas wchodzących w skład hierarchii klas, ale nie wszystkich.
-** polecenie
+** polecenie (command)
  który zmienia żądanie w samodzielny obiekt zawierający wszystkie informacje o tym żądaniu. Taka transformacja pozwala na parametryzowanie metod przy użyciu różnych żądań. Oprócz tego umożliwia opóźnianie lub kolejkowanie wykonywania żądań oraz pozwala na cofanie operacji.
 + gdy chcesz parametryzować obiekty za pomocą działań.
 + pozwala układać kolejki zadań, ustalać harmonogram ich wykonania bądź uruchamiać je zdalnie.
