@@ -1,13 +1,41 @@
 
+OP source: https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc
+
 #+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
+* SOLID
+** single responsibility
+Klasa powinna mieć tylko jedną odpowiedzialność (nigdy nie powinien istnieć więcej niż jeden powód do modyfikacji klasy).
+** open-closed principle
+Klasy (encje) powinny być otwarte na rozszerzenia i zamknięte na modyfikacje.
+** liskov substitution principle
+Funkcje które używają wskaźników lub referencji do klas bazowych, muszą być w stanie używać również obiektów klas dziedziczących po klasach bazowych, bez dokładnej znajomości tych obiektów.
++ to zalatwia jezyk programowania
+** interface segregation
+Wiele dedykowanych interfejsów jest lepsze niż jeden ogólny.
+** dependency inversion
+Wysokopoziomowe moduły nie powinny zależeć od modułów niskopoziomowych - zależności między nimi powinny wynikać z abstrakcji.
 
 * UML
+** diagram klas
 [[./zwiazki_UML.png]]
+[[./uml.png]]
+*** asocjacja
++ asocjacja - linia
++ asocjacja kierunkowa - linia z strzalka
++ agregacja(has-a) - pusty romb
++ kompozycja (agregacja mocna/calkowita) - zamalowany romb
 
-* BMPN
+**** kompozycja vs agregacja
+przy kompozycji jezeli niszczymy rodzica to dziecko tez ginie
+*** dziedziczenie (generalizacja) is-a
+*** implementacja (do intefejsow/abstract)
+** diagram sekwencji
+** diagram przypadkow uzycia
+* BPMN
 ** zdarzenia
 [[./zdarzenia.png]]
-
+** bramki
+[[./bpmngate.png]]
 * wzorce kreacyjne
 ** singleton
 https://refactoring.guru/design-patterns/singleton
@@ -66,7 +94,7 @@ Wyobraź sobie jakiś skomplikowany obiekt, którego inicjalizacja jest pracoch�
 ** Obserwator (observer)
 [[./obserwator.png]]
 + okresla zaleznosc jeden do wiele miedzy obiektami
-+ gdy jeden obiekt zmienia stan wszystkie obiekty od niego zalezne sa o tym automatycznie powiadamiane i uaktualniane (np. w kalkulatorze mamy 3 klasy wypisywania ktore maja w sobie string do wypisywania, kiedy wprowadzamy nowe dzialanie wszyskie sa updatowane)
++ gdy jeden obiekt zmienia stan wszystkie obiekty od niego zalezne sa o tym automatycznie powiadamiane i same sie uaktualniaja (np. w kalkulatorze mamy 3 klasy wypisywania ktore maja w sobie string do wypisywania, kiedy wprowadzamy nowe dzialanie wszyskie dostaja powiadomienie i sie  updatuja)
 + wydaje mi sie ze realizowany w grach -> bo trzeba updatowac stan obiektow a one musza znac stan innych
 + gdy zmiany stanu jednego obiektu mogą wymagać zmiany w innych obiektach, a konkretny zestaw obiektów nie jest zawczasu znany lub ulega zmianom dynamicznie
 + gdy jakieś obiekty w twojej aplikacji muszą obserwować inne, ale tylko przez jakiś czas lub w niektórych przypadkach.
@@ -95,6 +123,8 @@ chemy umozliwic obiektowi zmiane zachowania w momencie zmiany wewnetrzengo stanu
 *** implementacja
 [[./stan.png]]
 ** strategia (strategy)
+[[./strategy.png]]
+
 https://refactoring.guru/design-patterns/strategy
 + roznica w implementacji ze stanem
 + w stanie klient nie widzi z kim dziala
@@ -244,9 +274,10 @@ iterator
 + Złożoność cyklometryczna jest podstawową miarą złożoności dowolnego fragmentu kodu programu
 ** Które z poniższych stwierdzeń charakteryzuje przypadki użycia
 + Przypadki użycia opisują procedury stosowane w systemie
-+ Przypadki użycia opisują opisują funkcjonalność lub zachowanie oczekiwane od opracowywanego systemu
++ Przypadki użycia opisują opisują funkcjonalność lub zachowanie oczekiwane od opracowywanego systemu1
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
++ dont use inheritance for code reuse
 ** opisac silna agregacja
 * pytania otwarte modelio
 ** system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety
