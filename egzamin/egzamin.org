@@ -298,7 +298,10 @@ iterator
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
-** opisac silna agregacja
++ kiedy dziedziczymy po klasie metody lub zmienne ktore dla naszego typu "powinny" byc nie zdefiniowane
++ brak pamieci
+** opisac silnva agregacja
+to co agregacja + jak rodzic ginie to dziecko ginie
 * pytania otwarte modelio
 ** system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety
 ** zamodeluj podsystem obslugi klienta w sklepie internetowych Zacznij od opisu wymagan i procesow
