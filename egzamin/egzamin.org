@@ -313,7 +313,8 @@ iterator
 ** na ponizszym rysunku pokazano diagram sekwencji
 [[./zadanie3.png]]
 [[./zadanie12.png]]
-+ 2 -> 1 -> 4 -> 3 -> 5
++ ~1 -> 4 -> 5 -> 2 -> 3~
++ ~4 -> 5 -> 1 -> 2 -> 3~
 ** wybierz zdania prawdziwe okreslajace testy jednostkowe
 [[./zadanie4.png]]
 + testy jednostkowe moga wymagac uzycia atrap obiektow
