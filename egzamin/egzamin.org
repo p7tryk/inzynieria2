@@ -295,6 +295,32 @@ iterator
 ** Które z poniższych stwierdzeń charakteryzuje przypadki użycia
 + Przypadki użycia opisują procedury stosowane w systemie
 + Przypadki użycia opisują opisują funkcjonalność lub zachowanie oczekiwane od opracowywanego systemu1
+** Na poniższym rysunku podano diagram klas oposujacy kalendarz online ktore z ponizszych stwierdzen sa prawdziwe
+[[./zadanie1.png]]
+** Wybierz zdanie prawdziwe opisujace wzorzec strategia
+[[./zadanie2.png]]
+[[./zadanie10.png]]
+** na ponizszym rysunku pokazano diagram sekwencji
+[[./zadanie3.png]]
+[[./zadanie12.png]]
+** wybierz zdania prawdziwe okreslajace testy jednostkowe
+[[./zadanie4.png]]
+** wybierz zdania prawdziwe okreslajace testy B  \beta
+[[./zadanie5.png]]
+** na ponizszym rysunku podano diagram klas oposujacy kalendarz online
+[[./zadanie6.png]]
+** ktore z ponizszych stwierdzen dotyczacych pakietowego poziomu widocznosci sa poprawne
+[[./zadanie7.png]]
+** wybierz zdania prawdziwe opisujace wzorzec kompozyt
+[[./zadanie8.png]]
+** agregacja ...
+[[./zadanie9.png]]
+** ktore stwierdzenia dotyczace ponizszego rysunku sa poprawne
+[[./zadanie11.png]]
+** wybierz zdania prawdziwe opisujace wzorzec budowniczy
+[[./zadanie13.png]]
+** ktore z ponizszych pytan ma sens w identyfikacji aktorow na diagramie przypadkow uzycia
+[[./zadanie14.png]]
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
