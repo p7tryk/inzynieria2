@@ -303,7 +303,6 @@ iterator
 ** Na poniższym rysunku podano diagram klas oposujacy kalendarz online ktore z ponizszych stwierdzen sa prawdziwe
 [[./zadanie1.png]]
 + osoba moze nalezec do wiecej niz jednej grupy
-+ istnieja osoby, do ktorych nie rpzypisano zadnych osob
 ** Wybierz zdanie prawdziwe opisujace wzorzec strategia
 [[./zadanie2.png]]
 [[./zadanie10.png]]
