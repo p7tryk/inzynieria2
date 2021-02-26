@@ -20,6 +20,11 @@ Wysokopoziomowe moduły nie powinny zależeć od modułów niskopoziomowych - za
 ** diagram klas (class)
 [[./zwiazki_UML.png]]
 [[./uml.png]]
+*** visibility (widocznosc)
++ ~+public~
++ ~-private~
++ ~#protected~
++ ~~package~
 *** asocjacja
 + asocjacja - linia
 + asocjacja kierunkowa - linia z strzalka
@@ -297,30 +302,66 @@ iterator
 + Przypadki użycia opisują opisują funkcjonalność lub zachowanie oczekiwane od opracowywanego systemu1
 ** Na poniższym rysunku podano diagram klas oposujacy kalendarz online ktore z ponizszych stwierdzen sa prawdziwe
 [[./zadanie1.png]]
++ osoba moze nalezec do wiecej niz jednej grupy
++ istnieja osoby, do ktorych nie rpzypisano zadnych osob
 ** Wybierz zdanie prawdziwe opisujace wzorzec strategia
 [[./zadanie2.png]]
 [[./zadanie10.png]]
++ wzorzec strategia bazuje na kompozycji: mozna zmienic czesc zachowania obiektu poprzed nadanie mu roznych strategi odpowiadajacych temu zachowaniu
++ wzorzec strategia bazuje na kompozycji: mozna zmienic czesc zachowania obiektu poprzez nadanie mu roznych strategi odpowiadajacych temu zachowaniu
++ stosuj wzorzec strategia gdy twoja klasa zawiera duzy operator warunkowy, ktorego zadaniem jest wybor odpoweidzniego wariantu tego samego algorytmu
 ** na ponizszym rysunku pokazano diagram sekwencji
 [[./zadanie3.png]]
 [[./zadanie12.png]]
++ 2 -> 1 -> 4 -> 3 -> 5
 ** wybierz zdania prawdziwe okreslajace testy jednostkowe
 [[./zadanie4.png]]
++ testy jednostkowe moga wymagac uzycia atrap obiektow
++ testy jednostkowe sa wykonywane w izolacji od reszty systemu
 ** wybierz zdania prawdziwe okreslajace testy B  \beta
 [[./zadanie5.png]]
++ testy \beta wykonuja obecni lub potencjalni klienci we wlasnych lokalizacjach
++ testy \beta moga byc, ale nie musza, poprzedzone testami \alpha
 ** na ponizszym rysunku podano diagram klas oposujacy kalendarz online
 [[./zadanie6.png]]
++ grupa osob moze zawierac kilka osob
++ osoba moze nalezec dow iecej niz jednej grupy
 ** ktore z ponizszych stwierdzen dotyczacych pakietowego poziomu widocznosci sa poprawne
 [[./zadanie7.png]]
++ jesli zastosujemy go do atrybutow oraz operacji, beda one miec poziom widocznosci zdefiniowany gdzies pomiedzy chronionym a prywatnym
++ jezeli do klasy dodamy atrybut lub operacje zadeklarowana przy uzyciu pakietowego poziomu widocznosci, tedy bezposredni dostep do tego niego/niej maja wszystki klasy w tym samym pakiecie
 ** wybierz zdania prawdziwe opisujace wzorzec kompozyt
 [[./zadanie8.png]]
++ stosuj wzorzec kompozyt gdy chcesz, aby kod kliencki traktowal zarowno proste, jak i zlozone elementy jednakowo
++ odwiedzajacy moze wyknac dzialanie na calym drzewie wzorca kompozyt
 ** agregacja ...
 [[./zadanie9.png]]
++ jest reprezentowana przez pusty romb na koncu skojarzenia
++ mozna ja uzyc do wyrazenia referencji cyklicznych?????????
 ** ktore stwierdzenia dotyczace ponizszego rysunku sa poprawne
 [[./zadanie11.png]]
++ obiekt A moze, ale nie musi, zawierac obiekty C
++ obiekty B i D maja bezposredni dostep do atrybutu g
+
++obiekt C ma bezposredni dostep do atrybutu g //java jest zjebana
 ** wybierz zdania prawdziwe opisujace wzorzec budowniczy
 [[./zadanie13.png]]
++ stosuj wzorzec budowniczy do konstruowania drzew kompozytowych lub innych zlozonych obiektow
++ stosuj wzorzec budowniczy gdy potrzebujesz mozliwosci tworzenia roznych reprezentacji jakiego produktu
 ** ktore z ponizszych pytan ma sens w identyfikacji aktorow na diagramie przypadkow uzycia
 [[./zadanie14.png]]
++ kogo lub co interesuja wyniki, ktore system zapewnia
++ kto potrzebuje wsparcia systemowego w codziennej pracy
+** ktore z ponizszych stwierdzen dotyczace komunkatow sa poprawne
+[[./zadanie15.png]]
++ jest to informacja przesylana pomiedzy obiektami
+** ktore stwierdzenia dotyczace ponizszego rysunku sa poprawne
+[[./zadanie16.png]]
++ B jest czescia A
++ po usunieciu wystapienia A wszystkie zawarte wystapienia B zostaja usuniete
+** wybierz mozliwe kolejnosci komunikatow
+[[./zadanie17.png]]
++ d->a->b->c
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
