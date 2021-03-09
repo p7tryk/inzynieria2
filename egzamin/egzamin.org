@@ -21,6 +21,7 @@ Wysokopoziomowe moduły nie powinny zależeć od modułów niskopoziomowych - za
 [[./zwiazki_UML.png]]
 [[./uml.png]]
 *** visibility (widocznosc)
+[[./access.png]]
 + ~+public~
 + ~-private~
 + ~#protected~
@@ -364,34 +365,58 @@ iterator
 + d->a->b->c
 ** Na ponizszym rysunku pokazano diagram sekwencji
 [[./egz16.png]]
++ 5 -> 3 -> 4 -> 1 -> 2 -> 3 -> 4 
++ 3 -> 4 -< 3 -> 4 -> 1 -> 2 -> 5
 ** Zwiazek miedzy aktorem a aplikacja
 [[./egz15.png]]
++ jest binarny
++ 
 ** Wybierz zdania prawdziwe opisujace wzorzec budowniczy
 [[./egz13.png]]
++ mozesz zastosowac wzorzec **budowniczy** by tworzyc drzewa **kompozytowe** dzieki mozliwosci zaprogramowania ich etapow konstrukcji tak, aby odbywaly sie rekurencyjnie
 ** Wybierz zdania prawdziwe opisujace wzorzec budowniczy
 [[./egz12.png]]
++ mozesz zastosowac wzorzec **budowniczy** by tworzyc drzewa **kompozytowe** dzieki mozliwosci zaprogramowania ich etapow konstrukcji tak, aby odbywaly sie rekurencyjnie
 ** Na ponizszym rysunku pokazano diagram sekwencji
 [[./egz11.png]]
-** a
++ 3 -> 4 -> 1 -> 2 -> 3 -> 4 -> 5
+** wybierz zdania prawdize okreslajace testy \beta
 [[./egz10.png]]
-** a
++ Testy \beta moga byc, ale nie musza, poprzedzone testami \alpha
++ Testy \beta wykonuja obecni lub potencjalni klienci we wlasnych lokalizacjach
+** Ktore z ponizszych stwierdzen dotyczacych **chronionego poziomu widocznosci sa poprawne?
 [[./egz9.png]]
-** a
++ jezeli do klasy dodamy atrybut lub operacje zadeklarowana przy uzyciu chronionego poziomu widocznosci, wtedy bezposredni dostep do niego w tym samym pakiecie
++ elementy zadeklarowane jako chronione moga byc uzywane przez metody bedace czecsia danej klasy, jak i rowniez przez metody dowolnej innej, ktora ja dziedziczy
+** Na poniszym rysunku pokazano diagram sekwencji
 [[./egz8.png]]
-** a
++ 3 -> 4 -> 3 -> 4 -> 1 -> 2 -> 5
+** Klasa abstrakcyjna to klasa, ktora
 [[./egz7.png]]
-** a
++ nie moze miec wlasnych obiektow
++ nie moze posiadac metody konkretne lub abstrakcyjne
+** Wybierz zdania prawdziwe opisujace wzorzec **odwiedzajacy**
 [[./egz6.png]]
-** a
++ Stosowanie odwiedzajacego pozwola uprzatnac logike biznesowa czynnosci pomocniczych
+** Ktore stwierdzanie dotyczace ponizszego rysunku sa poprawne
 [[./egz5.png]]
-** a
++ mieszkanie moze wynajac kilku najemcow o roznych umowach najmu
++ najemca moze wynajac kilka roznych mieszkan z roznymi umowami najmu
+** Aktywne obiekty na diagramie sekwencji
 [[./egz4.png]]
-** a
++ ??? maja swoj wlasny przeplyw sterowania
++ ??? moga dzialac niezaleznie od innych obiektow
+** Wybierz zdania prawdziwe opisujace wzorzec **kompozyt**
 [[./egz3.png]]
-** a
++ mozesz zastosowac wzorzec budowniczy by tworzyc by tworzyc zlozone drzewa wzorca **kompozyt** dzieki mozliwosci zaprogramowania ich etapow konstrukcji tak, aby odbywaly sie rekurencyjne
++ mozesz zastosowac **kompozyt** by tworzyc zlozne listy dzieki mozliwosci zaprogramowania ich etapow konstrukcji tak, aby odybywaly sie rekurencyjnie
+** Wybierz zdania prawdziwe okreslajace pojecie **bledy logicznego** w oprogramowaniu
 [[./egz2.png]]
-** a
++ bledy logiczne sa czesto trudne do zlokalizowania
++ wiekszosc wysilkow, podczas testowania programu, koncentruje sie na ich znajdowaniu
+** klasy asocjacyjne sluza do
 [[./egz1.png]]
++ opisu powiazan
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
@@ -403,10 +428,3 @@ to co agregacja + jak rodzic ginie to dziecko ginie
 ** system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety
 ** zamodeluj podsystem obslugi klienta w sklepie internetowych Zacznij od opisu wymagan i procesow
 ** zamodeluj podsystem platnosci w sklepie internetowym
-
-
-
-
-
-
-
