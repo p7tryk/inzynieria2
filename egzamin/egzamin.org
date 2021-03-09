@@ -362,6 +362,36 @@ iterator
 ** wybierz mozliwe kolejnosci komunikatow
 [[./zadanie17.png]]
 + d->a->b->c
+** Na ponizszym rysunku pokazano diagram sekwencji
+[[./egz16.png]]
+** Zwiazek miedzy aktorem a aplikacja
+[[./egz15.png]]
+** Wybierz zdania prawdziwe opisujace wzorzec budowniczy
+[[./egz13.png]]
+** Wybierz zdania prawdziwe opisujace wzorzec budowniczy
+[[./egz12.png]]
+** Na ponizszym rysunku pokazano diagram sekwencji
+[[./egz11.png]]
+** a
+[[./egz10.png]]
+** a
+[[./egz9.png]]
+** a
+[[./egz8.png]]
+** a
+[[./egz7.png]]
+** a
+[[./egz6.png]]
+** a
+[[./egz5.png]]
+** a
+[[./egz4.png]]
+** a
+[[./egz3.png]]
+** a
+[[./egz2.png]]
+** a
+[[./egz1.png]]
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
@@ -372,6 +402,7 @@ to co agregacja + jak rodzic ginie to dziecko ginie
 * pytania otwarte modelio
 ** system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety
 ** zamodeluj podsystem obslugi klienta w sklepie internetowych Zacznij od opisu wymagan i procesow
+** zamodeluj podsystem platnosci w sklepie internetowym
 
 
 
