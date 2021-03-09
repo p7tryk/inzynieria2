@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="projektinzynieria2" version="4">
+  <OBJECT>
+    <ID name="projektinzynieria2" mc="Standard.Package" uid="326daf10-903d-4a2a-bd40-45ce15839b25"/>
+    <PID name="projektinzynieria2" mc="Standard.Project" uid="119bd7da-21db-481f-b6fa-ac1815b82f8c"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[projektinzynieria2]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="GUI" mc="Standard.Class" uid="98640f53-e593-45c9-8615-ffee304649df"/>
+        <COMPID name="bazasql" mc="Standard.Class" uid="a8ed9ef7-1c7f-4018-aca2-5f4296e94ac2"/>
+        <COMPID name="rekord" mc="Standard.Class" uid="38821bb6-5ba0-4ecb-bc3b-5651fd484717"/>
+        <COMPID name="pracownicy" mc="Standard.Class" uid="a890942c-e545-44f8-8542-ceb87548c517"/>
+        <COMPID name="klienci" mc="Standard.Class" uid="31717552-6c9b-4449-8f0e-a6cabeb3fabc"/>
+        <COMPID name="klient" mc="Standard.Class" uid="718bf115-f700-452e-88d9-c61448bd8a64"/>
+        <COMPID name="Pracownik" mc="Standard.Class" uid="707a483a-185c-49c9-b1cb-d193875fa964"/>
+        <COMPID name="osoba" mc="Standard.Class" uid="62165f8a-2aa5-45a3-bfe1-f3430a946712"/>
+        <COMPID name="rola" mc="Standard.Interface" uid="18840864-fe03-4912-ba49-c5870d4a01d6"/>
+        <COMPID name="koszyk" mc="Standard.Class" uid="b86eb825-1476-48f4-a327-e92c7bbcc9e5"/>
+        <COMPID name="Produkt" mc="Standard.Class" uid="e8ad1f67-b48c-4453-83fc-e2d1f4d8e414"/>
+        <COMPID name="Towar" mc="Standard.Class" uid="22b0951e-d99a-4b26-8fe9-5ed1463e9405"/>
+        <COMPID name="produktkoszyk" mc="Standard.Class" uid="b362bc38-5b7b-4bda-8234-5c524dddfd7d"/>
+        <COMPID name="zamowienie" mc="Standard.Class" uid="0eb67b8e-303f-491e-9c01-3dbd38e1302c"/>
+        <COMPID name="kupon" mc="Standard.Class" uid="3c52af2d-40f7-4707-bd74-761dc3f30477"/>
+        <COMPID name="Adresy_dostawy" mc="Standard.Class" uid="9d418ceb-63a6-41c2-a01c-e2ff921b8879"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="projektinzynieria2 Class diagram" mc="Standard.ClassDiagram" uid="83fd303c-5f55-4f91-97f8-b5564000d124"/>
+        <COMPID name="diagram klas" mc="Standard.ClassDiagram" uid="b1dc184b-6904-4a45-8cf2-42591eb27d37"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

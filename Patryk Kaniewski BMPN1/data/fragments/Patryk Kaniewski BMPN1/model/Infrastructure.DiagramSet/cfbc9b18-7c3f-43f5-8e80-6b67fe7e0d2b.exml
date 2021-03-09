@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Patryk Kaniewski BMPN1" version="4">
+  <OBJECT>
+    <ID name="Patryk Kaniewski BMPN1" mc="Infrastructure.DiagramSet" uid="cfbc9b18-7c3f-43f5-8e80-6b67fe7e0d2b"/>
+    <PID name="Patryk Kaniewski BMPN1" mc="Standard.Project" uid="14d56e2f-92d1-4d52-8f59-bca44677f23f"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[Patryk Kaniewski BMPN1]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

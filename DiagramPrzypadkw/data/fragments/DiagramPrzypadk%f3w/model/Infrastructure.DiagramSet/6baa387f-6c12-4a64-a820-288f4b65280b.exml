@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="DiagramPrzypadków" version="4">
+  <OBJECT>
+    <ID name="DiagramPrzypadków" mc="Infrastructure.DiagramSet" uid="6baa387f-6c12-4a64-a820-288f4b65280b"/>
+    <PID name="DiagramPrzypadków" mc="Standard.Project" uid="c1489fa0-5b76-4c65-9a55-4412887bbac6"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[DiagramPrzypadków]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

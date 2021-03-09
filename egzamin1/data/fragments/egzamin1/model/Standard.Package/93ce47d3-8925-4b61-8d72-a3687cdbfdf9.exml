@@ -12,6 +12,51 @@
       <ATT name="Name"><![CDATA[egzamin1]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
-    <DEPENDENCIES></DEPENDENCIES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="klient placi" mc="Standard.BpmnProcess" uid="597afb80-2366-4138-b785-7280be25dba2"/>
+        <COMPID name="dzial platnosci" mc="Standard.BpmnProcess" uid="9fcebcc8-8444-4897-b8fa-8b7e1089f4f9"/>
+        <COMPID name="payment procesor" mc="Standard.BpmnProcess" uid="fac28266-63be-4069-9842-f79c1eef5e33"/>
+        <COMPID name="Collaboration" mc="Standard.BpmnCollaboration" uid="5731c84b-96cd-474a-89a3-63b79277bbc2"/>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="platnosc" mc="Standard.Class" uid="ec212210-7767-4709-8a80-627ebd175a82"/>
+        <COMPID name="karta" mc="Standard.Class" uid="a877af8a-a8a6-4aa2-818f-0b329b68e596"/>
+        <COMPID name="zamowienie" mc="Standard.Class" uid="42159cdd-11c1-4052-b377-d14c62295332"/>
+        <COMPID name="koszyk" mc="Standard.Class" uid="01d324f1-070f-48ec-b959-f762acce77b0"/>
+        <COMPID name="klient" mc="Standard.Class" uid="5c276761-1a0e-40ed-b26a-9edcee10f7e4"/>
+        <COMPID name="przelew" mc="Standard.Class" uid="1e5cd1c5-7d18-4c76-92de-244745f4cfce"/>
+        <COMPID name="paypal" mc="Standard.Class" uid="4ac26484-fc93-432c-b5fa-4612d0a944a1"/>
+        <COMPID name="produkt_koszyk" mc="Standard.Class" uid="d88f6113-d701-4e31-a096-ead9b0d2d136"/>
+        <COMPID name="produkt" mc="Standard.Class" uid="8c7995f9-ef16-4015-82e2-69b755547288"/>
+        <COMPID name="typ platnosci" mc="Standard.Interface" uid="3dae860f-d90b-4b8d-af4f-c6ff3535ca2c"/>
+        <OBJECT>
+          <ID name="status" mc="Standard.Enumeration" uid="c469c959-eaa1-434c-822f-5f22aee4f289"/>
+          <ATTRIBUTES>
+            <ATT name="IsElementary">true</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="IsLeaf">false</ATT>
+            <ATT name="IsRoot">false</ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="Name"><![CDATA[status]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <COMPID name="klient" mc="Standard.Actor" uid="e7107caa-a2a3-4136-8ba2-c5c63a4c3ed3"/>
+        <COMPID name="bank" mc="Standard.Actor" uid="3c674d2d-be68-4626-9a48-eba2535dcf5f"/>
+        <COMPID name="paypal" mc="Standard.Actor" uid="6b8c945f-8970-45a2-8d0c-bfddcabb6e6d"/>
+        <COMPID name="potwierdz zamowienie" mc="Standard.UseCase" uid="1f6d5310-b6b6-4a9f-b89b-4f5ce8879805"/>
+        <COMPID name="wykonaj platnosc" mc="Standard.UseCase" uid="7d5ef51d-761a-4a2c-986a-f6ecd34303a9"/>
+        <COMPID name="zaplac karta" mc="Standard.UseCase" uid="031a9a9f-e1f5-4420-ac0d-4f8f79ab55d7"/>
+        <COMPID name="zaplac przelew" mc="Standard.UseCase" uid="8b18972d-a587-4363-ac39-a40a4d192509"/>
+        <COMPID name="zaplac paypal" mc="Standard.UseCase" uid="7975fea4-9cb6-4f75-927a-c0af95382ed4"/>
+        <COMPID name="stripe" mc="Standard.Actor" uid="01013845-b411-4969-9862-f41ef7247c08"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="diagram klas" mc="Standard.ClassDiagram" uid="4fe52fdc-19a5-4312-b319-098adc1f705e"/>
+        <COMPID name="DPU" mc="Standard.UseCaseDiagram" uid="54fc7073-8280-4b8d-bacf-00e42b09f474"/>
+      </COMP>
+    </DEPENDENCIES>
   </OBJECT>
 </EXT>

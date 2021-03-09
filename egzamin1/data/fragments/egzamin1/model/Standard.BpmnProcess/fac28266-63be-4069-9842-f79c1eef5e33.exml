@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="payment procesor" version="4">
+  <OBJECT>
+    <ID name="payment procesor" mc="Standard.BpmnProcess" uid="fac28266-63be-4069-9842-f79c1eef5e33"/>
+    <PID name="egzamin1" mc="Standard.Package" uid="93ce47d3-8925-4b61-8d72-a3687cdbfdf9"/>
+    <ATTRIBUTES>
+      <ATT name="ProcessType">NoneProcess</ATT>
+      <ATT name="IsClosed">false</ATT>
+      <ATT name="IsExecutable">OUndefined</ATT>
+      <ATT name="IsReentrant">false</ATT>
+      <ATT name="Name"><![CDATA[payment procesor]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="FlowElement">
+        <OBJECT>
+          <ID name="Ad-hoc Sub-Process" mc="Standard.BpmnAdHocSubProcess" uid="f4be208c-9dc6-4d31-b209-32dc045525b6"/>
+          <ATTRIBUTES>
+            <ATT name="Ordering">ParallelOrdering</ATT>
+            <ATT name="CancelRemainingInstances">true</ATT>
+            <ATT name="CompletionCondition"></ATT>
+            <ATT name="IsForCompensation">false</ATT>
+            <ATT name="StartQuantity">1</ATT>
+            <ATT name="CompletionQuantity">1</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Ad-hoc Sub-Process]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="Product">
+              <COMPID name="Ad-hoc Sub-Process" mc="Standard.BpmnSubProcessDiagram" uid="e6f5a5f7-07e8-40ce-b34d-74fd6955f265"/>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="platnosc pomyslna" mc="Standard.BpmnEndEvent" uid="621f6677-b945-4fce-bb03-81c8b965fa3c"/>
+          <ATTRIBUTES>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[platnosc pomyslna]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnMessageEventDefinition" uid="ba8f048b-ce97-4d43-b1c3-6780a3be7d7f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="platnosc niepomyslna" mc="Standard.BpmnEndEvent" uid="dcb92ef6-7754-4f98-bf30-e07852dac5f7"/>
+          <ATTRIBUTES>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[platnosc niepomyslna]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnMessageEventDefinition" uid="5f6fe4f5-65fb-44a6-a219-5a620a164b5f"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="e2d3a402-02ff-4f04-9045-b5c9f3932cb1"/>
+          <ATTRIBUTES>
+            <ATT name="GatewayDirection">UnspecifiedDirection</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Exclusive Gateway]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES></DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f1" mc="Standard.BpmnSequenceFlow" uid="7dadc221-2654-4365-ab63-3ac4f48aeb4b"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f1]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Ad-hoc Sub-Process" mc="Standard.BpmnAdHocSubProcess" uid="f4be208c-9dc6-4d31-b209-32dc045525b6"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="e2d3a402-02ff-4f04-9045-b5c9f3932cb1"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f2" mc="Standard.BpmnSequenceFlow" uid="b9d2d36f-806a-4270-a617-48480e3be121"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f2]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="e2d3a402-02ff-4f04-9045-b5c9f3932cb1"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="platnosc pomyslna" mc="Standard.BpmnEndEvent" uid="621f6677-b945-4fce-bb03-81c8b965fa3c"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f3" mc="Standard.BpmnSequenceFlow" uid="20b238d6-260e-48ea-acf4-a5619321154d"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f3]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Exclusive Gateway" mc="Standard.BpmnExclusiveGateway" uid="e2d3a402-02ff-4f04-9045-b5c9f3932cb1"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="platnosc niepomyslna" mc="Standard.BpmnEndEvent" uid="dcb92ef6-7754-4f98-bf30-e07852dac5f7"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Message" mc="Standard.BpmnStartEvent" uid="135fbd84-75ba-4e44-8bb3-77e075691adf"/>
+          <ATTRIBUTES>
+            <ATT name="IsInterrupting">true</ATT>
+            <ATT name="ParallelMultiple">false</ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[Message]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <COMP relation="EventDefinitions">
+              <OBJECT>
+                <ID name="" mc="Standard.BpmnMessageEventDefinition" uid="d0f56b02-cfc2-45f5-a139-a190a22b07ab"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="f" mc="Standard.BpmnSequenceFlow" uid="193c952c-552e-4ce2-ba36-abb179c0bbe7"/>
+          <ATTRIBUTES>
+            <ATT name="IsImmediate">false</ATT>
+            <ATT name="ConditionExpression"></ATT>
+            <ATT name="TriggeredByEvent">false</ATT>
+            <ATT name="Name"><![CDATA[f]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SourceRef">
+              <REFOBJ>
+                <ID name="Message" mc="Standard.BpmnStartEvent" uid="135fbd84-75ba-4e44-8bb3-77e075691adf"/>
+              </REFOBJ>
+            </LINK>
+            <LINK relation="TargetRef">
+              <REFOBJ>
+                <ID name="Ad-hoc Sub-Process" mc="Standard.BpmnAdHocSubProcess" uid="f4be208c-9dc6-4d31-b209-32dc045525b6"/>
+              </REFOBJ>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="payment processor" mc="Standard.BpmnProcessDesignDiagram" uid="35c85ec5-4e0d-4ba7-bcff-62b22d8830fd"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

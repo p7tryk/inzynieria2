@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="patryk_kaniewski" version="4">
+  <OBJECT>
+    <ID name="patryk_kaniewski" mc="Standard.Package" uid="ea750d82-a249-49a3-8d1c-8e5a4b7d1988"/>
+    <PID name="zadanie2" mc="Standard.Package" uid="9130ce68-a494-4667-90c6-151b44b98894"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[patryk_kaniewski]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Kalkulator" mc="Standard.Class" uid="fb8fe4c4-042e-4627-ad2f-1e78475f83f6"/>
+        <COMPID name="Operacja" mc="Standard.Class" uid="e10ea766-c71f-4639-8c0f-a46b0662097c"/>
+        <COMPID name="Dodawanie" mc="Standard.Class" uid="a23a2278-5f03-442e-a6df-244ae3250685"/>
+        <COMPID name="Klient" mc="Standard.Class" uid="e2af59cf-9671-49b3-84dd-236b51c653c8"/>
+        <COMPID name="Odejmowanie" mc="Standard.Class" uid="04d099a0-8731-4994-ac05-7063d620de4d"/>
+        <COMPID name="Mnozenie" mc="Standard.Class" uid="f16d1770-536e-4422-8f96-a4e5135e18b0"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="patryk_kaniewski Class diagram" mc="Standard.ClassDiagram" uid="3a9bcde8-86fe-42e7-aad5-d3dff861cb03"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

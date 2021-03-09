@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="project1" version="4">
+  <OBJECT>
+    <ID name="project1" mc="Standard.Package" uid="5be2812b-cd61-40d0-a7a5-94042e02c15e"/>
+    <PID name="Project1" mc="Standard.Project" uid="4b44cbee-77c4-4851-963b-6f6fb36bfa9e"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[project1]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Pracownik" mc="Standard.Class" uid="80a1b42b-d4b5-4a3e-9a15-ff841a68708d"/>
+        <COMPID name="ProgramistaJava" mc="Standard.Class" uid="5174e5cb-80a0-4ec2-aa89-2a3576070d32"/>
+        <COMPID name="ProgramistaPHP" mc="Standard.Class" uid="edf72a05-4d92-4097-96e0-ff726a25701e"/>
+        <COMPID name="Prezes" mc="Standard.Class" uid="d60fa649-4659-4e0c-b7f6-0530b6fd64bc"/>
+        <COMPID name="Programujacy" mc="Standard.Interface" uid="52e92300-45ba-41dc-a397-b79ce631d1bf"/>
+        <COMPID name="Robiacy kawe" mc="Standard.Interface" uid="8a0375f6-c333-4bd9-ac77-87dcbd8b0657"/>
+        <COMPID name="Sekretarka" mc="Standard.Class" uid="3ba9e984-ba48-48d5-9046-2120c243ab81"/>
+        <COMPID name="ProgramujeJava" mc="Standard.Class" uid="e8f36c8f-2177-44ea-a480-a3aaaca3a36a"/>
+        <COMPID name="ProgramujePHP" mc="Standard.Class" uid="88aabf85-1019-4054-b7a8-d631c3372712"/>
+        <COMPID name="Nieprogramuje" mc="Standard.Class" uid="b03722c1-a6cd-4e03-bca4-1c47fbcdfc90"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="project1 Class diagram" mc="Standard.ClassDiagram" uid="f440bd59-6020-4226-8949-fa9396d10874"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

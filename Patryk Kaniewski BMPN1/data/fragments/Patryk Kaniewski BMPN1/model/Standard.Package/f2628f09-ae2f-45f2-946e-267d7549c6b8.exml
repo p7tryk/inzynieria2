@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="patryk kaniewski bmpn1" version="4">
+  <OBJECT>
+    <ID name="patryk kaniewski bmpn1" mc="Standard.Package" uid="f2628f09-ae2f-45f2-946e-267d7549c6b8"/>
+    <PID name="Patryk Kaniewski BMPN1" mc="Standard.Project" uid="14d56e2f-92d1-4d52-8f59-bca44677f23f"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[patryk kaniewski bmpn1]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedBehavior">
+        <COMPID name="Klient" mc="Standard.BpmnProcess" uid="acd67b82-397b-495e-8029-2a42a6471743"/>
+        <COMPID name="Hurtownia" mc="Standard.BpmnProcess" uid="d1317cc1-fcad-496e-b340-066229a3c6ea"/>
+        <COMPID name="Collaboration" mc="Standard.BpmnCollaboration" uid="dd8ee70d-64fa-41bb-958d-b0a9691df118"/>
+        <COMPID name="Fabryka" mc="Standard.BpmnProcess" uid="4abe0503-7a07-4c69-9132-2ae6e5311186"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

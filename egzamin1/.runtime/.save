@@ -1,4 +1,7 @@
-#Wed Jan 27 13:06:01 CET 2021
+#Wed Mar 03 12:47:06 CET 2021
+org.modelio.app.diagram.editor.OpenedDiagrams2='diagram klas' {4fe52fdc-19a5-4312-b319-098adc1f705e} Standard.ClassDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams1='DPU' {54fc7073-8280-4b8d-bacf-00e42b09f474} Standard.UseCaseDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams0=' Collaboration' {68836036-1142-4748-be25-ceb127849ac7} Standard.BpmnCollaborationDiagram
 org.modelio.app.module.propertytab.JavaDesigner\ v3.10.00\ GModule\ @file\:///home/thisconnect/.modelio/4.1/modules/JavaDesigner_3.10.00/JavaDesigner_3.10.00.jmdac\ runtime\ module_.org.modelio.full.perspective.parentId=app.ui.ext_com.partstack.bottom
 org.modelio.app.module.propertytab.JavaDesigner\ v3.10.00\ GModule\ @file\:///home/thisconnect/.modelio/4.1/modules/JavaDesigner_3.10.00/JavaDesigner_3.10.00.jmdac\ runtime\ module_.org.modelio.development.perspective.parentId=app.ui.ext_com.partstack.bottom
 org.modelio.app.module.propertytab.JavaDesigner\ v3.10.00\ GModule\ @file\:///home/thisconnect/.modelio/4.1/modules/JavaDesigner_3.10.00/JavaDesigner_3.10.00.jmdac\ runtime\ module_.org.modelio.diagram.perspective.parentId=app.ui.ext_com.partstack.right

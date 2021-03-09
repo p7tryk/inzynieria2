@@ -1,0 +1,9 @@
+#Tue Feb 23 14:31:13 CET 2021
+org.modelio.app.diagram.editor.OpenedDiagrams3=' Collaboration' {7c56392d-0e86-4351-8ee2-0f9c6c9fba68} Standard.BpmnCollaborationDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams2='Process' {b3e5bf17-9751-4114-b6e4-a05501cbcba7} Standard.BpmnProcessDesignDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams1='Hurtownia' {5576fa79-d41d-443b-b29a-651a1eb35bb4} Standard.BpmnProcessDesignDiagram
+org.modelio.app.diagram.editor.OpenedDiagrams0='fabryka' {df768586-c036-4bbe-ae90-d20fc97048c7} Standard.BpmnProcessDesignDiagram
+org.modelio.diagram.editor.OpenedDiagrams3=' Collaboration' {7c56392d-0e86-4351-8ee2-0f9c6c9fba68} Standard.BpmnCollaborationDiagram
+org.modelio.diagram.editor.OpenedDiagrams2='fabryka' {df768586-c036-4bbe-ae90-d20fc97048c7} Standard.BpmnProcessDesignDiagram
+org.modelio.diagram.editor.OpenedDiagrams1='Hurtownia' {5576fa79-d41d-443b-b29a-651a1eb35bb4} Standard.BpmnProcessDesignDiagram
+org.modelio.diagram.editor.OpenedDiagrams0='Process' {b3e5bf17-9751-4114-b6e4-a05501cbcba7} Standard.BpmnProcessDesignDiagram

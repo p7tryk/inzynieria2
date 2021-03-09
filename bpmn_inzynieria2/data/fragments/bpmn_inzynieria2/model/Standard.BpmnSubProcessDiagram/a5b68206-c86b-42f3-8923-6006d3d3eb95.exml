@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Ad-hoc Sub-Process" version="4">
+  <OBJECT>
+    <ID name="Ad-hoc Sub-Process" mc="Standard.BpmnSubProcessDiagram" uid="a5b68206-c86b-42f3-8923-6006d3d3eb95"/>
+    <PID name="Process2" mc="Standard.BpmnProcess" uid="3ef772eb-2cf0-4b96-9217-bc0335a9f79f"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">0</ATT>
+      <ATT name="UiData"></ATT>
+      <ATT name="PreviewData"></ATT>
+      <ATT name="Name"><![CDATA[Ad-hoc Sub-Process]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagramprzypadków" version="4">
+  <OBJECT>
+    <ID name="diagramprzypadków" mc="Standard.Package" uid="d68d5caf-73dd-4e10-9845-85465ee3642a"/>
+    <PID name="DiagramPrzypadków" mc="Standard.Project" uid="c1489fa0-5b76-4c65-9a55-4412887bbac6"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[diagramprzypadków]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Klient" mc="Standard.Actor" uid="631803ed-0af7-48ee-b44b-7ed3bed17757"/>
+        <COMPID name="Odwiedzenie strony sklepu" mc="Standard.UseCase" uid="8719f17e-aeee-4485-9754-2d25f5a907b5"/>
+        <COMPID name="Wyszukanie produktu" mc="Standard.UseCase" uid="947a4841-daa1-4db2-9fe1-7c72f8b2818a"/>
+        <COMPID name="Dokonuje zakupu" mc="Standard.UseCase" uid="0133e3b8-6f43-40f6-9dd3-a1c02024224a"/>
+        <COMPID name="Pracownik" mc="Standard.Actor" uid="482ee70b-57e2-42a9-9e34-97b382e4436f"/>
+        <COMPID name="Przyjecie zamowienia" mc="Standard.UseCase" uid="716d4c95-a79c-4148-acad-c1e6f719930f"/>
+        <COMPID name="Dodanie do koszyka" mc="Standard.UseCase" uid="c83df2c7-f291-4f92-b5b6-62603f711827"/>
+        <COMPID name="Otrzymanie faktury" mc="Standard.UseCase" uid="1c0d9f36-d2a3-4aa1-8ddd-5d81e579778f"/>
+        <COMPID name="Klient" mc="Standard.Actor" uid="7944c2fd-45a8-40b5-96bf-fe76daec76bf"/>
+        <COMPID name="Pracownik" mc="Standard.Actor" uid="00f46541-56ed-4c82-b65a-bb41b9cbb952"/>
+        <COMPID name="Odwiedzenie sklepu" mc="Standard.UseCase" uid="79dcca2d-58a3-4a69-832c-936682ec34fe"/>
+        <COMPID name="Wyszukanie produktu" mc="Standard.UseCase" uid="0b390711-eec7-4901-9b4a-088201be2e18"/>
+        <COMPID name="Dodanie do koszyka" mc="Standard.UseCase" uid="23f39e2c-6f3d-4101-a39c-4636616636ab"/>
+        <COMPID name="Rezygnacja z zakupu" mc="Standard.UseCase" uid="8850f138-0eef-401b-a2c1-e1ed43bac300"/>
+        <COMPID name="Klient" mc="Standard.Actor" uid="783d3f20-b8be-4e41-b91a-ee91eb96db65"/>
+        <COMPID name="Odwiedzenie sklepu" mc="Standard.UseCase" uid="9dc75660-98b6-4f46-bbbd-e2add13be0d4"/>
+        <COMPID name="Wyszukanie produktu" mc="Standard.UseCase" uid="1bea8553-b2fd-4e3c-aeaf-bf3f05f7cc5f"/>
+        <COMPID name="Dodanie do koszyka" mc="Standard.UseCase" uid="066c2a1c-d004-4acd-8335-3ae4e1eff59d"/>
+        <COMPID name="Dokonanie zakupu" mc="Standard.UseCase" uid="9ea62159-8948-4d4d-afe3-5100eef05d7d"/>
+        <COMPID name="Zwrot produktu" mc="Standard.UseCase" uid="af34fd55-b546-49b3-889c-4aa27f788455"/>
+        <COMPID name="Otrzymanie faktury" mc="Standard.UseCase" uid="3f964c35-264b-44f7-b2e8-efaa702b22df"/>
+        <COMPID name="Przyjecie zamowienia" mc="Standard.UseCase" uid="2845c881-7ad9-4f41-93c0-5a46dbe22651"/>
+        <COMPID name="Odebranie zwrotu" mc="Standard.UseCase" uid="d7dbc960-a04a-4c07-9ea5-be8b8b370555"/>
+        <COMPID name="Obsluga zamowienia" mc="Standard.UseCase" uid="e57cbe90-6682-482b-86a7-b3c333f2497c"/>
+        <COMPID name="Obsluga zamowienia" mc="Standard.UseCase" uid="a1fdac40-d775-4e4a-8153-c45037f563c2"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="diagramprzypadków Use Case diagram" mc="Standard.UseCaseDiagram" uid="68541670-1dd5-4a55-9853-8d590c8c9644"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

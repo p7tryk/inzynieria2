@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="bpmn_inzynieria2" version="4">
+  <OBJECT>
+    <ID name="bpmn_inzynieria2" mc="Standard.Project" uid="00ce1f94-a34f-4da0-a026-86f52d2e96c4"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[bpmn_inzynieria2]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="bpmn_inzynieria2" mc="Standard.Package" uid="c1a6e749-6516-4eb4-b31b-5830367ca0da"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="bpmn_inzynieria2" mc="Infrastructure.DiagramSet" uid="8feb1f93-b91c-4829-93b3-469e8dd3255c"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

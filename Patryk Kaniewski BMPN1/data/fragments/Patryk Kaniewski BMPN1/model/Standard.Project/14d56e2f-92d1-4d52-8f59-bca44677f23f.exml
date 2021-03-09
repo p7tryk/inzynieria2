@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Patryk Kaniewski BMPN1" version="4">
+  <OBJECT>
+    <ID name="Patryk Kaniewski BMPN1" mc="Standard.Project" uid="14d56e2f-92d1-4d52-8f59-bca44677f23f"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[Patryk Kaniewski BMPN1]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Model">
+        <COMPID name="patryk kaniewski bmpn1" mc="Standard.Package" uid="f2628f09-ae2f-45f2-946e-267d7549c6b8"/>
+        <COMPID name="Model" mc="Standard.Package" uid="1cb1754e-50fe-4071-8223-61f37490679f"/>
+      </COMP>
+      <COMP relation="DiagramRoot">
+        <COMPID name="Patryk Kaniewski BMPN1" mc="Infrastructure.DiagramSet" uid="cfbc9b18-7c3f-43f5-8e80-6b67fe7e0d2b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

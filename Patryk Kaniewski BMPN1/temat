@@ -1,0 +1,10 @@
+hurtownia
+
+towar jest sprzedawany:
+dostaje zapytania
+przekierowuje zapytania do zakladu produkcyjnego
+narzucenie marzy
+propozycja klienta
+klient akceptuje albo nie
+jesli tak to wysyla informacje do zakladu produkcejnego
+towar jest wytwarzany i wysylany dla klienta
