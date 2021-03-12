@@ -380,11 +380,12 @@ iterator
 ** Na ponizszym rysunku pokazano diagram sekwencji
 [[./egz11.png]]
 + 3 -> 4 -> 1 -> 2 -> 3 -> 4 -> 5
++ 1 -> 2
 ** wybierz zdania prawdize okreslajace testy \beta
 [[./egz10.png]]
 + Testy \beta moga byc, ale nie musza, poprzedzone testami \alpha
 + Testy \beta wykonuja obecni lub potencjalni klienci we wlasnych lokalizacjach
-** Ktore z ponizszych stwierdzen dotyczacych **chronionego poziomu widocznosci sa poprawne?
+** Ktore z ponizszych stwierdzen dotyczacych **chronionego** poziomu widocznosci sa poprawne?
 [[./egz9.png]]
 + jezeli do klasy dodamy atrybut lub operacje zadeklarowana przy uzyciu chronionego poziomu widocznosci, wtedy bezposredni dostep do niego w tym samym pakiecie
 + elementy zadeklarowane jako chronione moga byc uzywane przez metody bedace czecsia danej klasy, jak i rowniez przez metody dowolnej innej, ktora ja dziedziczy
@@ -417,6 +418,15 @@ iterator
 ** klasy asocjacyjne sluza do
 [[./egz1.png]]
 + opisu powiazan
+** etykieta klasyfikatora moze byc zbudowana m.in z:
++ nazwy klasy referencyjnej
+** Które z poniższych stwierdzeń dotyczące diagramów sekwencji są poprawne? 
++ Diagram sekwencji może być użyty do modelowania interakcji systemu z jego otoczeniem. 
+** Typowymi defektami wykrywanymi przez testy integracyjne, są
+[[./integracyjne.png]]
++ ???
+** diagram klas opisuje
++ strukturalny askept systemu
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
