@@ -275,7 +275,7 @@ iterator
 + ???przypadki uzycia posuja funkcjonalnosc lub zachowanie oczekiwane od opracowanego systemu???
 ** wybierz zdania prawdziwe okreslajace pojecie *bledu logicznego* w oprogramowaniu
 + wiekszosc wysilkow, podzas testowania programu, koncentruje sie na ich znajdowaniu
-+ blad  logiczny powstaje, gdy zewnetrzne zdarzenie lub nie wykryt blad skladni zmusza proces do zatrzymania swojego dzialania
++ bledy logiczne sa czesto trudne do zlokalizowania
 ** Proces określania wymagań dla systemu informatycznego można podzielić na następujące fazy
 + Faza ustalania wymagań
 + Faza specyfikacji wymagań
@@ -343,8 +343,7 @@ iterator
 [[./zadanie11.png]]
 + obiekt A moze, ale nie musi, zawierac obiekty C
 + obiekty B i D maja bezposredni dostep do atrybutu g
-
-+obiekt C ma bezposredni dostep do atrybutu g //java jest zjebana
++ obiekt C ma bezposredni dostep do atrybutu g //java jest zjebana
 ** wybierz zdania prawdziwe opisujace wzorzec budowniczy
 [[./zadanie13.png]]
 + stosuj wzorzec budowniczy do konstruowania drzew kompozytowych lub innych zlozonych obiektow
@@ -447,6 +446,18 @@ iterator
 + jedynym z typow komunikatow to komunikaty samowywolania
 ** ktore z ponizszych stwierdzen dotyczacych publicznego poziomu widocznosci sa poprawne
 + jest okreslony za pomoca symbolu +
+** wybierz prawdziwe okreslajace pojecie zlozonosci cyklometrycznej
++ zlozonosc jest to liczba niezaleznych sciezek w programie
++ zlozonosc jest podstawowa miara zlozonsci dowolnego fragmentu kodu programu
+** kompozycja
++ jest mocniejsza forma agregacji
++ modeluje zwiazek czesc - calosc
+** ktore z ponizszych stwierdzen dotyczace komunikacji synchronicznej sa poprawne
++ w komunikacji synchronicznej nadawca czeka na odpowiedz od odbiorcy
++ komunikacja synchroniczna jest modelowana przez zamalowana strzalke grotu
+** powiazania
+[[./powiazania.png]]
++ modeluja mozliwe releacje miedzy instancjami klas
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
