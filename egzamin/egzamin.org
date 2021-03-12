@@ -426,7 +426,27 @@ iterator
 [[./integracyjne.png]]
 + ???
 ** diagram klas opisuje
-+ strukturalny askept systemu
++ strukturalny aspekt systemu
+** ktore stwierdzenia dotyczace ponizszego rysunku sa poprawne
+[[./kompozycja.png]]
++ B jest czescia A
++ po usunieciu wystapienia A zawarte wystapienia B zostaja usuniete
+** ktore twierdzenia sa prawdziwe
+[[./twierdzenia.png]]
++ sposob implemetnacji asocjacji jest rozny w zaleznosci od zdefiniowanych licznosci
++ ???
+** ktore stwierdzenia dotyczace ponizszego rysunku sa poprawne
+[[./stwierdzenia.png]]
++ mieszkanie moze wynajac kilku najemcow o roznych umowach najmu
++ najemca moze wynajac kilka roznych miekszan z roznymi umowami najmu
+** ktore z ponizszych stwierdzen dotyczacych punktu rozszerzen sa poprawne
+[[./extend.png]]
++ punkty rozszerzenia sa uzywane w relacjach \<\<extend>>
+** ktore z ponizszych stwierdzen dotyczace komunkatow sa poprawne
+[[./komunikat.png]]
++ jedynym z typow komunikatow to komunikaty samowywolania
+** ktore z ponizszych stwierdzen dotyczacych publicznego poziomu widocznosci sa poprawne
++ jest okreslony za pomoca symbolu +
 * pytania otwarte odpowiedz
 ** kiedy nie nalezy stosowac dziedziczenia opisz przynajmniej dwa przypadki
 + dont use inheritance for code reuse
@@ -434,6 +454,7 @@ iterator
 + brak pamieci
 ** opisac silnva agregacja
 to co agregacja + jak rodzic ginie to dziecko ginie
+
 * pytania otwarte modelio
 ** system w ktorym pracownicy moga byc rowniez klientami, zaproponuj trzy rozwiazania opisujac i wady i zalety
 ** zamodeluj podsystem obslugi klienta w sklepie internetowych Zacznij od opisu wymagan i procesow
